@@ -35,7 +35,7 @@ $menu = $app->getMenu();
 </head>
 <body class="cms-index-index cms-home">
 <div id="wrapper">
-<jdoc:include type="modules" name="topmost" class="topmost"   />
+<jdoc:include type="modules" name="topmost" style="xhtml"  />
 <div id="header-wrap" class="clr">
     	<div id="header" class="container row clr">   
             <div id="logo" class="col span_4">

@@ -41,7 +41,7 @@ img { height:auto; max-width:100%;}
 body { color: #606060; font-weight: 400; background: #fff; font: 13px/25px  Arial, Helvetica, sans-serif; nowhitespace: afterproperty; }
 #box-wrap { margin: 20px auto; padding: 0px; }
 #main-content { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-#wrapper { margin:0 auto; max-width:960px; padding:0;position: relative;}
+#wrapper { margin:0 auto; max-width:100%; padding:0;position: relative;}
 #comp-wrap {padding:0}
 .full { padding:0; margin:0; clear:both}
 .contact a { text-decoration:none}
@@ -387,4 +387,4 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #footer-nav ul { float:none}
 .copyright { float:none; text-align:center}
 }
-.topmost { background:black}
+.moduletablereferral{ background-color:black}
