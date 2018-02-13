@@ -35,7 +35,7 @@
 		<folder>php/</folder>	
 	</files>
 	<positions>
-        <position>topmost</position>
+		<position>topmost</position>
 		<position>breadcrumbs</position>
 		<position>top</position>
 		<position>menu</position>
