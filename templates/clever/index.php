@@ -35,7 +35,9 @@ $menu = $app->getMenu();
 </head>
 <body class="cms-index-index cms-home">
 <div id="wrapper">
-<jdoc:include type="modules" name="topmost" style="xhtml"  />
+<div id="topmost">
+<div class="leftmargin"><jdoc:include type="modules" name="topmost" style="none"  /></div>
+</div>
 <div id="header-wrap" class="clr">
     	<div id="header" class="container row clr">   
             <div id="logo" class="col span_4">
@@ -75,9 +77,11 @@ $menu = $app->getMenu();
 <?php endif; ?>
        
 <?php if (is_array($menuid) && !is_null($menu->getActive()) && in_array($menu->getActive()->id, $menuid, false)) { ?>
-            <div id="slide-wrap" class="container row clr">
+            <div id="slider-bg">
+			<div id="slide-wrap" class="container row clr">
                     <?php include "slideshow.php"; ?>
             </div>
+			</div>
 <?php } ?>
  
         <?php if ($this->countModules('breadcrumbs')) : ?>

@@ -118,7 +118,7 @@ p a, p a:visited { line-height: inherit }
 /* Header  */
 #header-wrap { padding: 10px; height:auto }
 #header-wrap .row { margin-bottom: 0 }
-#logo { display:inline-block; margin:0 0 10px 0;}
+#logo { display:inline-block; margin: auto; width: 220px; height: auto;}
 #logo img { max-height:70px; display:block; width:auto;}
 #logo a{color:#000;text-shadow: 0 -2px 0 #cfcfcf;line-height:60px; font-size:60px; font-family:'Pacifico',Arial, Helvetica, sans-serif; text-align:left; text-decoration:none; font-weight:bold}
 #site-description {color:#000; text-shadow: 0 -1px 0 #cfcfcf; font-size:12px;font-family:'Sintony',Arial, Helvetica, sans-serif;letter-spacing:1px; font-weight:normal; text-transform: uppercase}
@@ -387,4 +387,9 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #footer-nav ul { float:none}
 .copyright { float:none; text-align:center}
 }
-.moduletablereferral{ background-color:black}
+#topmost	{ background-color: #000000; padding: 10px; }
+#second-msg	{ color: #ffffff;}
+.leftmargin	{ max-width: 960px; margin: 0 auto;}
+#slide-wrap: { width: 100%}
+.full { width:100%; height: 500px}
+#slider-bg { width: 100%; margin: 0 auto; background-color: #fefefe;}
