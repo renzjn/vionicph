@@ -37,7 +37,7 @@ $menu = $app->getMenu();
 <body class="cms-index-index cms-home">
 <div id="wrapper">
 <div id="topmost">
-<div class="leftmargin"><jdoc:include type="modules" name="topmost" style="none"  /></div>
+<div class="leftmargin"><jdoc:include type="modules" name="topmost"  /></div>
 </div>
 <div id="header-wrap" class="clr">
     	<div id="header" class="container row clr">
@@ -84,8 +84,8 @@ $menu = $app->getMenu();
             </div>
 			</div>
 <?php } ?>
- <div class="dailyslogan1"><jdoc:include type="modules" name="slogan1" style="none"  /></div>
- <div class="dailyslogan2"><jdoc:include type="modules" name="slogan2" style="none"  /></div>
+ <div><jdoc:include type="modules" name="slogan1"  /></div>
+ <div><jdoc:include type="modules" name="slogan2" /></div>
         <?php if ($this->countModules('breadcrumbs')) : ?>
         	<jdoc:include type="modules" name="breadcrumbs"  style="none"/>
         <?php endif; ?>
