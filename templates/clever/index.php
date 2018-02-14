@@ -85,7 +85,7 @@ $menu = $app->getMenu();
 			</div>
 <?php } ?>
  <div class="dailyslogan1"><jdoc:include type="modules" name="slogan1" style="none"  /></div>
-  <div class="dailyslogan2"><jdoc:include type="modules" name="slogan2" style="none"  /></div>
+ <div class="dailyslogan2"><jdoc:include type="modules" name="slogan2" style="none"  /></div>
         <?php if ($this->countModules('breadcrumbs')) : ?>
         	<jdoc:include type="modules" name="breadcrumbs"  style="none"/>
         <?php endif; ?>
