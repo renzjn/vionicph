@@ -23,6 +23,7 @@ $menu = $app->getMenu();
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/styles.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/MyFontsWebfontsKit.css" type="text/css" />
 <!-- Custom CSS For IE -->
 <!--[if IE 7]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/font-awesome-ie7.min.css" type="text/css" /><![endif]-->
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
@@ -39,20 +40,20 @@ $menu = $app->getMenu();
 <div class="leftmargin"><jdoc:include type="modules" name="topmost" style="none"  /></div>
 </div>
 <div id="header-wrap" class="clr">
-    	<div id="header" class="container row clr">   
+    	<div id="header" class="container row clr">
             <div id="logo" class="col span_4">
 				<?php if ($logotype == 'image' ) : ?>
                 <?php if ($logo != null ) : ?>
             <a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>" alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" /></a>
                 <?php else : ?>
             <a href="<?php echo $this->baseurl ?>/"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/logo.png" border="0"></a>
-                <?php endif; ?><?php endif; ?> 
+                <?php endif; ?><?php endif; ?>
                 <?php if ($logotype == 'text' ) : ?>
             <a href="<?php echo $this->baseurl ?>"><?php echo htmlspecialchars($sitetitle);?></a>
                 <?php endif; ?>
                 <?php if ($sitedesc !== '' ) : ?>
                 <div id="site-description"><?php echo htmlspecialchars($sitedesc);?></div>
-                <?php endif; ?>  
+                <?php endif; ?>
             </div><!-- /logo -->
         	<?php if ($this->countModules('top')) : ?>
             <div id="top" class="col span_8">
@@ -64,18 +65,18 @@ $menu = $app->getMenu();
 </div>
 <?php $menu = $app->getMenu(); if ($menu->getActive() == $menu->getDefault()) { ?>
 <div class="clever">Copyright &copy; <?php echo date("Y")?> VionicShop. All Rights Reserved</div>
-<?php } ?> 
+<?php } ?>
 <?php if ($this->countModules('menu')) : ?>
 <div id="navbar-wrap">
     <nav id="navbar" class="container row clr">
-    	<div id="navigation" class="span_12 col clr"> 
+    	<div id="navigation" class="span_12 col clr">
         	<jdoc:include type="modules" name="menu" style="menu" />
-         </div>            
+         </div>
     </nav>
 </div>
 <div class="clr"></div>
 <?php endif; ?>
-       
+
 <?php if (is_array($menuid) && !is_null($menu->getActive()) && in_array($menu->getActive()->id, $menuid, false)) { ?>
             <div id="slider-bg">
 			<div id="slide-wrap" class="container row clr">
@@ -83,17 +84,18 @@ $menu = $app->getMenu();
             </div>
 			</div>
 <?php } ?>
- 
+ <div class="dailyslogan1"><jdoc:include type="modules" name="slogan1" style="none"  /></div>
+  <div class="dailyslogan2"><jdoc:include type="modules" name="slogan2" style="none"  /></div>
         <?php if ($this->countModules('breadcrumbs')) : ?>
         	<jdoc:include type="modules" name="breadcrumbs"  style="none"/>
         <?php endif; ?>
-        
+
 		<?php if ($this->countModules('user1')) : ?>
             <div id="user1-wrap"><div id="user1" class="container row clr">
             	<jdoc:include type="modules" name="user1" style="usergrid" grid="<?php echo $user1_width; ?>" />
             </div></div>
         <?php endif; ?>
-                    
+
 <div id="box-wrap" class="container row clr">
 	<div id="main-content" class="row span_12">
 							<?php if ($this->countModules('left')) : ?>
@@ -124,7 +126,7 @@ $menu = $app->getMenu();
             	<jdoc:include type="modules" name="user2" style="usergrid" grid="<?php echo $user2_width; ?>" />
             </div></div>
         <?php endif; ?>
-        
+
 <div id="footer-wrap"  class="container row clr" >
         <?php if ($this->countModules('copyright')) : ?>
             <div class="copyright">
@@ -132,10 +134,10 @@ $menu = $app->getMenu();
             </div>
         <?php endif; ?>
         <?php if ($this->countModules('footer-menu')) : ?>
-            <div id="footer-nav">           
+            <div id="footer-nav">
 				<jdoc:include type="modules" name="footer-menu" style="none" />
             </div>
-        <?php endif; ?>                
+        <?php endif; ?>
 </div>
 </div>
 </body>

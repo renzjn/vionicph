@@ -32,7 +32,7 @@
 		<folder>images/</folder>
 		<folder>js/</folder>
 		<folder>font/</folder>
-		<folder>php/</folder>	
+		<folder>php/</folder>
 	</files>
 	<positions>
 		<position>topmost</position>
@@ -43,37 +43,39 @@
 		<position>left</position>
 		<position>right</position>
 		<position>slideshow</position>
+    <position>slogan1</position>
+    <position>slogan2</position>
 		<position>user1</position>
 		<position>user2</position>
 		<position>copyright</position>
 	</positions>
 	<config>
 		<fields name="params" addfieldpath="/templates/clever/php">
-						
-			<fieldset name="advanced">			
-			
+
+			<fieldset name="advanced">
+
 				<field name="scrolltop" type="list" default="yes" label="Back to Top Button" description="Enable or disable Back to Top button. This requires jQuery plugin." filter="word">
 					<option value="yes">Enable</option>
 					<option value="no">Disable</option>
-				</field>										
+				</field>
 				<field name="logotype" type="list" default="image" label="Logo Type" description="Choose the type of the logo you want to display." filter="word">
 					<option value="image">Image Logo</option>
 					<option value="text">Text Logo</option>
-				</field>			
+				</field>
 			 <field name="logo" type="media" label="Logo Image" description="Please choose an image. If you want to display the original logo from the template, click on Clear and leave the field blank." />
 			 <field name="sitetitle"  type="text" default="Clever" label="Logo Text" description="Please add your site title here, it's only displayed if you don't use a the text logo option." filter="string" />
 			 <field name="sitedesc"  type="text" default=""	label="Site Description" description="Add your site's description here. Leave it blank to disable." filter="string" />
 		<field type="asset"/>
 		</fieldset>
-			
-		<fieldset name="slides" label="Slideshow Setup">	
+
+		<fieldset name="slides" label="Slideshow Setup">
         <field name="menuid" type="menuitem"  multiple="true" size="10" default="0" label="Show/Hide Slideshow" description="Select Menu where to show the slideshow" >
         	<option value="0">- Hide Slideshow -</option>
          </field>
 		<field name="animation" type="list" default="fade" label="Slideshow Animation" description="Choose the animation type for the slideshow" filter="word">
 					<option value="fade">Fade</option>
 					<option value="slide">Slide</option>
-		</field>		 
+		</field>
 		<!-- SLIDE 1 -->
 		<field type="spacer" name="&lt;h3 class=&quot;sub-heading&quot;&gt;Slide 1&lt;/h3&gt;" />
 		<field name="Image1" label="Image 1" type="media"  description="Choose an image." />
@@ -88,7 +90,7 @@
 		<field type="spacer" name="&lt;h3 class=&quot;sub-heading&quot;&gt;Slide 3&lt;/h3&gt;" />
 		<field name="Image3" label="Image 3" type="media"  description="Choose an image." />
 		<field name="Link3" label="Link 3" type="text"  description="URL where the slider image will link." />
-		<field name="Caption3" label="Caption 3" type="textarea" filter="safehtml"  cols="30" rows="5" default="" description="Add image caption here. HTML allowed." />		
+		<field name="Caption3" label="Caption 3" type="textarea" filter="safehtml"  cols="30" rows="5" default="" description="Add image caption here. HTML allowed." />
 		<!-- SLIDE 4 -->
 		<field type="spacer" name="&lt;h3 class=&quot;sub-heading&quot;&gt;Slide 4&lt;/h3&gt;" />
 		<field name="Image4" label="Image 4" type="media"  description="Choose an image." />
@@ -175,10 +177,10 @@
 		<field name="Image20" label="Image 20" type="media"  description="Choose an image." />
 		<field name="Link20" label="Link 20" type="text"  description="URL where the slider image will link." />
         <field name="Caption20" label="Caption 20" type="textarea" filter="safehtml"  cols="30" rows="5" default="" description="Add image caption here. HTML allowed." />
-		</fieldset>	
+		</fieldset>
 
 
-		<fieldset name="social" label="Social Icons">			
+		<fieldset name="social" label="Social Icons">
 			<field name="SocialLink1" label="&lt;div class=&quot;social_1&quot;&gt;Facebook&lt;/div&gt;" type="text"  description="Add URL here. (ie: http://facebook.com/user.name)" />
 			<field name="SocialLink2" label="&lt;div class=&quot;social_2&quot;&gt;Twitter&lt;/div&gt;" type="text"  description="Add URL here. (ie: http://twitter/username)" />
 			<field name="SocialLink3" label="&lt;div class=&quot;social_3&quot;&gt;Google&lt;/div&gt;" type="text"  description="Add URL here." />
@@ -189,9 +191,9 @@
 			<field name="SocialLink8" label="&lt;div class=&quot;social_8&quot;&gt;Picasa&lt;/div&gt;" type="text"  description="Add URL here." />
 			<field name="SocialLink9" label="&lt;div class=&quot;social_9&quot;&gt;Linkedin&lt;/div&gt;" type="text"  description="Add URL here." />
 			<field name="SocialLink10" label="&lt;div class=&quot;social_10&quot;&gt;Reddit&lt;/div&gt;" type="text"  description="Add URL here." />
-		</fieldset>	
-		
-						
+		</fieldset>
+
+
 		</fields>
-	</config>	
+	</config>
 </extension>
