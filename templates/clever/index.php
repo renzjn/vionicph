@@ -19,7 +19,7 @@ $menu = $app->getMenu();
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <?php } else { JHtml::_('bootstrap.framework');JHtml::_('bootstrap.loadCss', false, $this->direction);}?>
 <?php include "functions.php"; ?>
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/styles.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/font-awesome.min.css" type="text/css" />
@@ -41,7 +41,7 @@ $menu = $app->getMenu();
 </div>
 <div id="header-wrap" class="clr">
     	<div id="header" class="container row clr">
-            <div id="logo" class="col span_4">
+            <div id="logo" class="customheader">
 				<?php if ($logotype == 'image' ) : ?>
                 <?php if ($logo != null ) : ?>
             <a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>" alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" /></a>
@@ -86,16 +86,18 @@ $menu = $app->getMenu();
 <?php } ?>
  <div><jdoc:include type="modules" name="slogan1"  /></div>
  <div><jdoc:include type="modules" name="slogan2" /></div>
-        <?php if ($this->countModules('breadcrumbs')) : ?>
+         <?php if ($this->countModules('breadcrumbs')) : ?>
         	<jdoc:include type="modules" name="breadcrumbs"  style="none"/>
         <?php endif; ?>
 
-		<?php if ($this->countModules('user1')) : ?>
-            <div id="user1-wrap"><div id="user1" class="container row clr">
-            	<jdoc:include type="modules" name="user1" style="usergrid" grid="<?php echo $user1_width; ?>" />
-            </div></div>
-        <?php endif; ?>
 
+				<div id="contentslide-wrapper" class="container row clr">
+					<div id="contenttext-wrapper">
+				<jdoc:include type="modules" name="contentslidetext1" />
+				<jdoc:include type="modules" name="contentslidetext2" />
+				<jdoc:include type="modules" name="shop-men-women-buttons" />
+			</div>
+			  </div>
 <div id="box-wrap" class="container row clr">
 	<div id="main-content" class="row span_12">
 							<?php if ($this->countModules('left')) : ?>
@@ -120,14 +122,44 @@ $menu = $app->getMenu();
                             <?php endif; ?>
 	</div>
 </div>
-
+<?php if ($this->countModules('user1')) : ?>
+				<div id="user1-wrap"><div id="user1" class="container row clr">
+					<jdoc:include type="modules" name="user1" style="usergrid" grid="<?php echo $user1_width; ?>" />
+				</div></div>
+		<?php endif; ?>
 		<?php if ($this->countModules('user2')) : ?>
             <div id="user2-wrap"><div id="user2" class="container row clr">
             	<jdoc:include type="modules" name="user2" style="usergrid" grid="<?php echo $user2_width; ?>" />
             </div></div>
         <?php endif; ?>
-
-<div id="footer-wrap"  class="container row clr" >
+				<div class="container row clr"><jdoc:include type="modules" name="lookbook" /></div>
+				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>
+				<div class="container row clr">
+					<div class="customcontenttext customelevatedtext left-text-elevated"><jdoc:include type="modules" name="elevated" /></div>
+					<div class="customcontenttext customelevatedtext right-text-elevated"><jdoc:include type="modules" name="natural" /></div>
+				</div>
+				<div class="container row clr">
+					<div class="discovertextcontent left-text-elevated-content"><jdoc:include type="modules" name="elevated-content" /></div>
+					<div class="discovertextcontent right-text-elevated-content"><jdoc:include type="modules" name="natural-content" /></div>
+				</div>
+				<div class="container row clr">
+					<div class="elevated-left-column"><jdoc:include type="modules" name="elevated-left" /></div>
+					<div class="elevated-middle-column"><jdoc:include type="modules" name="elevated-middle" /></div>
+					<div class="elevated-right-column"><jdoc:include type="modules" name="elevated-right" /></div>
+				</div>
+				<div class="container row clr">
+					<div class="learnmore-left learnmore-box"><div class="buttonbox-link buttonbox-theme discoverbut"><jdoc:include type="modules" name="learnmore-left" /></div></div>
+					<div class="learnmore-right learnmore-box"><div class="buttonbox-link buttonbox-theme discoverbut"><jdoc:include type="modules" name="learnmore-right" /></div></div>
+				</div>
+				<div class="vionic-footer-wrapper">
+				<div class="vionic-footer-alignment service-slogan"><jdoc:include type="modules" name="vionic-footer-service" /></div>
+				<div class="container row clr">
+					<div class="vionic-footer-alignment"><jdoc:include type="modules" name="vionic-footer-top1" /></div>
+					<div class="vionic-footer-alignment"><jdoc:include type="modules" name="vionic-footer-top2" /></div>
+					<div class="vionic-footer-alignment"><jdoc:include type="modules" name="vionic-footer-top3" /></div>
+				</div>
+			</div>
+				<div id="footer-wrap"  class="container row clr" >
         <?php if ($this->countModules('copyright')) : ?>
             <div class="copyright">
                 <jdoc:include type="modules" name="copyright"/>
