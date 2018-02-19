@@ -327,7 +327,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #footer-wrap{ padding:10px 0;}
 #footer-wrap p{ margin:0; padding:0;}
 /* Footer Menu*/
-#footer-nav { float:right}
+#footer-nav { }
 #footer-nav ul {margin:0; padding:0; float:right; }
 #footer-nav ul li {list-style:none; display:inline-block;position:relative; padding:0; margin:0 1px 0 0; height:25px; border-right:none; font-family:'Sintony',Arial, Helvetica, sans-serif;}
 #footer-nav ul li a { display:block;padding:0 10px; margin:5px 0 0 0;line-height:12px;text-decoration:none;font-size:10px; text-transform:uppercase; border-right:1px solid #cfcfcf;
