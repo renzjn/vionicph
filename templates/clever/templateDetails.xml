@@ -63,6 +63,9 @@
     <position>vionic-footer-top1</position>
     <position>vionic-footer-top2</position>
     <position>vionic-footer-top3</position>
+    <position>vionic-footer-bot1</position>
+    <position>vionic-footer-bot2</position>
+    <position>vionic-footer-bot3</position>
 		<position>copyright</position>
 		<position>footer-menu</position>
 		<position>slideshow</position>
