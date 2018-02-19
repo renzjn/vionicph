@@ -161,9 +161,9 @@ $menu = $app->getMenu();
 				</div>
 			</div>
 			<div class="container row clr elevated-pad">
-				<div class="elevated-left-column"><jdoc:include type="modules" name="vionic-footer-bot1" /></div>
-				<div class="elevated-middle-column"><jdoc:include type="modules" name="vionic-footer-bot2" /></div>
-				<div class="elevated-right-column"><jdoc:include type="modules" name="vionic-footer-bot3" /></div>
+				<div class="footer-left-column"><jdoc:include type="modules" name="vionic-footer-bot1" /></div>
+				<div class="footer-middle-column"><jdoc:include type="modules" name="vionic-footer-bot2" /></div>
+				<div class="footer-right-column"><jdoc:include type="modules" name="vionic-footer-bot3" /></div>
 			</div>
 				<div id="footer-wrap"  class="container row clr" >
         <?php if ($this->countModules('copyright')) : ?>

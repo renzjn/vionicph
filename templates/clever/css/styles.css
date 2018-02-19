@@ -449,9 +449,9 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .customservicegap { margin-top: 40px;}
 .elevated-bg  {background-color: #efeff0; width: 100%; height: 600px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
 .elevated-pad { padding-top: 50px;}
-.footer-left-column { display: inline-block; float: left; width: 30%; text-align: center !important; position: relative; margin: 0; }
-.footer-middle-column { display: inline-block; width: 35%; text-align: center !important; position: relative; margin: 0; }
-.footer-right-column { display: inline-block; width: 30%; float: right; text-align: center !important; position: relative; margin: 0; }
+.footer-left-column { display: inline-block; float: left; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
+.footer-middle-column { display: inline-block; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
+.footer-right-column { display: inline-block; width: 33.33%; float: right; text-align: center !important; position: relative; margin: 0; }
 .divider { border-left:1px solid white; height: 160px;}
 
 
