@@ -113,7 +113,7 @@ strong { font-weight: bold }
 small { font-size: 80% }
 hr { height: 0; margin: 30px 0 30px; border: solid #eee; border-width: 1px 0 0; clear: both; }
 a { outline: 0; -webkit-transition: all 0.15s ease; -moz-transition: all 0.15s ease; -o-transition: all 0.15s ease; transition: all 0.15s ease}
-a:hover { }
+a:hover {  }
 p a, p a:visited { line-height: inherit }
 /* Header  */
 #header-wrap { padding: 10px; height:auto }
@@ -327,7 +327,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #footer-wrap{ padding:10px 0;}
 #footer-wrap p{ margin:0; padding:0;}
 /* Footer Menu*/
-#footer-nav { float:right}
+#footer-nav { }
 #footer-nav ul {margin:0; padding:0; float:right; }
 #footer-nav ul li {list-style:none; display:inline-block;position:relative; padding:0; margin:0 1px 0 0; height:25px; border-right:none; font-family:'Sintony',Arial, Helvetica, sans-serif;}
 #footer-nav ul li a { display:block;padding:0 10px; margin:5px 0 0 0;line-height:12px;text-decoration:none;font-size:10px; text-transform:uppercase; border-right:1px solid #cfcfcf;
@@ -442,10 +442,17 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .learnmore-left  { width: 50%; height: 20px; float: left; text-align: center !important; margin: 0; position: relative; }
 .learnmore-right  { width: 40%; height: 20px; float: right; text-align: center !important; margin: 0; position: relative; }
 .learnmore-box p { margin: 0; }
-.vionic-footer-alignment  { text-align: center !important; margin: auto; padding: 0;}
+.vionic-footer-alignment  { text-align: center !important; margin: auto; padding: 0; height: 100px;}
 .vionic-footer-alignment p  { margin: auto;}
-.vionic-footer-wrapper  {width: 100%; background-color: #000000; margin: 60px 0 0 0;}
+.vionic-footer-wrapper  {width: 100%; background-color: #000000; margin-top: -50px; height: 350px;}
 .service-slogan { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin-top: 50px; padding: 10px; letter-spacing: .4em; text-align: center !important; text-transform: uppercase; }
 .customservicegap { margin-top: 40px;}
+.elevated-bg  {background-color: #efeff0; width: 100%; height: 600px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
+.elevated-pad { padding-top: 50px;}
+.footer-left-column { display: inline-block; float: left; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
+.footer-middle-column { display: inline-block; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
+.footer-right-column { display: inline-block; width: 33.33%; float: right; text-align: center !important; position: relative; margin: 0; }
+.divider { border-left:1px solid white; height: 160px;}
+
 
 /***custom css ends here ***/
