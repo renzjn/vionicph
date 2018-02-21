@@ -39,6 +39,7 @@ $menu = $app->getMenu();
 <div id="topmost">
 <div class="leftmargin"><jdoc:include type="modules" name="topmost"  /></div>
 </div>
+<div id="topbar">
 <div id="header-wrap" class="clr">
     	<div id="header" class="container row clr">
             <div id="logo" class="customheader">
@@ -63,10 +64,6 @@ $menu = $app->getMenu();
             <?php include "social.php"; ?>
     	</div>
 </div>
-<?php $menu = $app->getMenu(); if ($menu->getActive() == $menu->getDefault()) { ?>
-<div class="clever">Copyright &copy; <?php echo date("Y")?> VionicShop. All Rights Reserved</div>
-<?php } ?>
-<?php if ($this->countModules('menu')) : ?>
 <div id="navbar-wrap">
     <nav id="navbar" class="container row clr">
     	<div id="navigation" class="span_12 col clr">
@@ -74,6 +71,12 @@ $menu = $app->getMenu();
          </div>
     </nav>
 </div>
+</div>
+<?php $menu = $app->getMenu(); if ($menu->getActive() == $menu->getDefault()) { ?>
+<div class="clever">Copyright &copy; <?php echo date("Y")?> VionicShop. All Rights Reserved</div>
+<?php } ?>
+<?php if ($this->countModules('menu')) : ?>
+
 <div class="clr"></div>
 <?php endif; ?>
 
@@ -155,9 +158,9 @@ $menu = $app->getMenu();
 				<div class="vionic-footer-wrapper">
 				<div class="vionic-footer-alignment service-slogan"><jdoc:include type="modules" name="vionic-footer-service" /></div>
 				<div class="container row clr">
-					<div class="vionic-footer-alignment footer-left-column divider"><jdoc:include type="modules" name="vionic-footer-top1" /></div>
-					<div class="vionic-footer-alignment footer-middle-column divider"><jdoc:include type="modules" name="vionic-footer-top2" /></div>
-					<div class="vionic-footer-alignment footer-right-column divider"><jdoc:include type="modules" name="vionic-footer-top3" /></div>
+					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top1" /></div>
+					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top2" /></div>
+					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top3" /></div>
 				</div>
 			</div>
 			<div class="container row clr elevated-pad">
