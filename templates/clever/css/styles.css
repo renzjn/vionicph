@@ -453,6 +453,10 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .footer-middle-column { display: inline-block; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
 .footer-right-column { display: inline-block; width: 33.33%; float: right; text-align: center !important; position: relative; margin: 0; }
 .divider { border-left:1px solid white; height: 160px;}
+.elevated-pad a:hover,  #footer-nav a:hover, .customfeatured a:hover { color: #b59d9c;}
+.detached { z-index: 1000; background: #fff}
+.form-inline { height: 70px; float: right; margin: 7px 0 0 0; }
+
 
 
 /***custom css ends here ***/
