@@ -447,7 +447,8 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .vionic-footer-wrapper  {width: 100%; background-color: #000000; margin-top: -50px; height: 350px;}
 .service-slogan { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin-top: 50px; padding: 10px; letter-spacing: .4em; text-align: center !important; text-transform: uppercase; }
 .customservicegap { margin-top: 40px;}
-.elevated-bg  {background-color: #efeff0; width: 100%; height: 600px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
+.elevated-bg  {background-color: #efeff0; width: 100%; height: 100px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
+.elevated-bgbot  {background-color: #efeff0; width: 100%; height: 250px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
 .elevated-pad { padding-top: 50px;}
 .footer-left-column { display: inline-block; float: left; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
 .footer-middle-column { display: inline-block; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
