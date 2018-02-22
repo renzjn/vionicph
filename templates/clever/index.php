@@ -136,25 +136,40 @@ $menu = $app->getMenu();
         <?php endif; ?>
 				<div class="container row clr"><jdoc:include type="modules" name="lookbook" /></div>
 				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>
+				<?php if ($this->countModules('elevated') || $this->countModules('natural')) : ?>
 				<div class="elevated-bg">
 				<div class="container row clr elevated-pad">
 					<div class="customcontenttext customelevatedtext left-text-elevated"><jdoc:include type="modules" name="elevated" /></div>
 					<div class="customcontenttext customelevatedtext right-text-elevated"><jdoc:include type="modules" name="natural" /></div>
 				</div>
+			</div>
+		<?php endif ?>
+			<?php if ($this->countModules('elevated-content') || $this->countModules('natural-content')) : ?>
+				<div class="elevated-bg">
 				<div class="container row clr">
 					<div class="discovertextcontent left-text-elevated-content"><jdoc:include type="modules" name="elevated-content" /></div>
 					<div class="discovertextcontent right-text-elevated-content"><jdoc:include type="modules" name="natural-content" /></div>
 				</div>
+			</div>
+		<?php endif; ?>
+			<?php if ($this->countModules('elevated-left') || $this->countModules('elevated-middle') || $this->countModules('elevated-right')) : ?>
+				<div class="elevated-bg">
 				<div class="container row clr elevated-pad">
 					<div class="elevated-left-column"><jdoc:include type="modules" name="elevated-left" /></div>
 					<div class="elevated-middle-column"><jdoc:include type="modules" name="elevated-middle" /></div>
 					<div class="elevated-right-column"><jdoc:include type="modules" name="elevated-right" /></div>
 				</div>
+			</div>
+		<?php endif; ?>
+				<?php if ($this->countModules('learnmore-left') || $this->countModules('learnmore-right')) : ?>
+					<div class="elevated-bgbot">
 				<div class="container row clr">
 					<div class="learnmore-left learnmore-box"><div class="buttonbox-link buttonbox-theme discoverbut"><jdoc:include type="modules" name="learnmore-left" /></div></div>
 					<div class="learnmore-right learnmore-box"><div class="buttonbox-link buttonbox-theme discoverbut"><jdoc:include type="modules" name="learnmore-right" /></div></div>
 				</div>
 			</div>
+					<?php endif; ?>
+			<?php if ($this->countModules('vionic-footer-top1') || $this->countModules('vionic-footer-top2') || $this->countModules('vionic-footer-top3')) : ?>
 				<div class="vionic-footer-wrapper">
 				<div class="vionic-footer-alignment service-slogan"><jdoc:include type="modules" name="vionic-footer-service" /></div>
 				<div class="container row clr">
@@ -163,6 +178,7 @@ $menu = $app->getMenu();
 					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top3" /></div>
 				</div>
 			</div>
+			<?php endif; ?>
 			<div class="container row clr elevated-pad">
 				<div class="footer-left-column"><jdoc:include type="modules" name="vionic-footer-bot1" /></div>
 				<div class="footer-middle-column"><jdoc:include type="modules" name="vionic-footer-bot2" /></div>
