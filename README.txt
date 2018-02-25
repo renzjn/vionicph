@@ -82,6 +82,7 @@ add id="shop-lookbook" and Class="testimonialtextformatting" to position and for
 and add class="shopunderline" to decorate the link it a bottom border
 
 SAMPLE CODE BELOW:
+for lookbook column overlap - margin-left: 60px;
 <div class="lookbook-image-left"><img src="images/full-image-section/lookbook-lifestyle-reagan.jpg" alt="lookbook lifestyle reagan" width="384" height="713.333" /></div>
 <div class="testimonial">
 <div class="testimonialtextformatting">“I need shoes that can get me through my entire day, but they have to be chic. Reagan is definitely both... and more!”</div>
