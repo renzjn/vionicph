@@ -412,10 +412,10 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .buttonbox-theme  { color: #fffff; }
 .customtrendingtext { color: #000; font-weight: 100; line-height: 1.6; margin: 0; padding: 0  ; letter-spacing: .3em; text-align: center; }
 .customlookbook-wrapper  { position:relative; margin-left:50px;}
-.lookbook-body  { text-align: center; z-index: 1; }
-.lookbook-image-right { position: relative; margin: 10px 0 0 50px; width: 50%; float: right;}
-.testimonial  { margin: 0; width: 100%; display:  inline-block; background: #fff; padding: 0; font-weight: 100; line-height: 100%; color: #000; margin-top: 20px; }
-.testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px;}
+.lookbook-image-right { text-align: center; }
+.lookbook-thumb { max-width: 80%;}
+.testimonial  { width: 100%; display:  inline-block; background: #fff; padding: 0; font-weight: 100; line-height: 100%; color: #000; margin-top: 30px; }
+.testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; padding: 20px;}
 .signaturetextformatting  { font-family: comic\ sans\ ms, sans-serif; font-size: 17px; color: #de9239; text-align: right !important; }
 #shop-lookbook  { width: 400px; text-align: center; margin: 15px; color: #000;}
 #shop-lookbook  a:hover  { color: #b59d9c;}

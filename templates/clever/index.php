@@ -140,8 +140,8 @@ $menu = $app->getMenu();
             </div></div>
         <?php endif; ?>
 				<div class="container row clr">
-				<div class="module span_6 col clr lookbook-body"><jdoc:include type="modules" name="lookbook-left" /></div>
-				<div class="module span_7 col clr"><jdoc:include type="modules" name="lookbook-right" /></div>
+				<div class="module span_5 col clr "><jdoc:include type="modules" name="lookbook-left" /></div>
+				<div class="module span_6 col clr "><jdoc:include type="modules" name="lookbook-right" /></div>
 				</div>
 				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>
 				<?php if ($this->countModules('elevated') || $this->countModules('natural')) : ?>
