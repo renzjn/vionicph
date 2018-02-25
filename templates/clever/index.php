@@ -21,9 +21,11 @@ $menu = $app->getMenu();
 <?php include "functions.php"; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/styles.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.min.css" type="text/css" />
+<!--<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>css/bootstrap/css/bootstrap.min.css" type="text/css" /> -->
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/font-awesome.min.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/MyFontsWebfontsKit.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap/js/bootstrap.min.js/"></script>
 <!-- Custom CSS For IE -->
 <!--[if IE 7]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/font-awesome-ie7.min.css" type="text/css" /><![endif]-->
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
@@ -37,7 +39,10 @@ $menu = $app->getMenu();
 <body class="cms-index-index cms-home">
 <div id="wrapper">
 <div id="topmost">
-<div class="leftmargin"><jdoc:include type="modules" name="topmost"  /></div>
+	<div class="container row">
+			<div class="span_6 col"><jdoc:include type="modules" name="topmost-left"  /></div>
+			<div class="span_6 col "><jdoc:include type="modules" name="topmost-right"  /></div>
+	</div>
 </div>
 <div id="topbar">
 <div id="header-wrap" class="clr">
@@ -134,7 +139,10 @@ $menu = $app->getMenu();
             	<jdoc:include type="modules" name="user2" style="usergrid" grid="<?php echo $user2_width; ?>" />
             </div></div>
         <?php endif; ?>
-				<div class="container row clr"><jdoc:include type="modules" name="lookbook" /></div>
+				<div class="container row clr">
+				<div class="module span_6 col clr lookbook-body"><jdoc:include type="modules" name="lookbook-left" /></div>
+				<div class="module span_7 col clr"><jdoc:include type="modules" name="lookbook-right" /></div>
+				</div>
 				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>
 				<?php if ($this->countModules('elevated') || $this->countModules('natural')) : ?>
 				<div class="elevated-bg">

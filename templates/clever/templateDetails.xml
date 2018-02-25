@@ -35,7 +35,8 @@
 		<folder>php/</folder>
 	</files>
 	<positions>
-		<position>topmost</position>
+    <position>topmost-left</position>
+    <position>topmost-right</position>
 		<position>top</position>
 		<position>menu</position>
 		<position>slogan1</position>
@@ -48,7 +49,8 @@
 		<position>left</position>
 		<position>right</position>
 		<position>user2</position>
-    <position>lookbook</position>
+    <position>lookbook-left</position>
+    <position>lookbook-right</position>
     <position>discover</position>
     <position>elevated</position>
     <position>natural</position>
