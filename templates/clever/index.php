@@ -81,7 +81,6 @@ $menu = $app->getMenu();
 <div class="clever">Copyright &copy; <?php echo date("Y")?> VionicShop. All Rights Reserved</div>
 <?php } ?>
 <?php if ($this->countModules('menu')) : ?>
-
 <div class="clr"></div>
 <?php endif; ?>
 
@@ -139,6 +138,18 @@ $menu = $app->getMenu();
             	<jdoc:include type="modules" name="user2" style="usergrid" grid="<?php echo $user2_width; ?>" />
             </div></div>
         <?php endif; ?>
+				<div id="trending" class="container row clr">
+				<div id="trending-text" class="module span_5 col clr "><jdoc:include type="modules" name="trending-left" /></div>
+				<div id="trending-text" class="module span_7 col clr " ><jdoc:include type="modules" name="trending-right" />
+							<div class="module span_12 col clr "><jdoc:include type="modules" name="trending-middle-text" /></div>
+							<div class="module span_5 col clr">
+							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-left" /></div>
+							</div>
+							<div class="module span_5 col clr">
+							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-right" /></div>
+						</div>
+				</div>
+				</div>
 				<div class="container row clr">
 				<div class="module span_5 col clr "><jdoc:include type="modules" name="lookbook-left" /></div>
 				<div class="module span_6 col clr "><jdoc:include type="modules" name="lookbook-right" /></div>

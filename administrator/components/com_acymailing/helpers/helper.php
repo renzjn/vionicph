@@ -488,8 +488,8 @@ function acymailing_footer(){
 		<!-- version '.$config->get('level').' : '.$config->get('version').' -->';
 	if(acymailing_level(1) && !acymailing_level(4)) return $text;
 	$level = $config->get('level');
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 	/*$text .= '<div class="acymailing_footer" align="center" style="text-align:center"><a href="https://www.acyba.com/?utm_source=acymailing-'.$level.'&utm_medium=front-end&utm_content=txt&utm_campaign=powered-by" target="_blank" title="'.ACYMAILING_NAME.' : '.str_replace('TM ', ' ', strip_tags($description)).'">'.ACYMAILING_NAME;
 =======
 /*	$text .= '<div class="acymailing_footer" align="center" style="text-align:center"><a href="https://www.acyba.com/?utm_source=acymailing-'.$level.'&utm_medium=front-end&utm_content=txt&utm_campaign=powered-by" target="_blank" title="'.ACYMAILING_NAME.' : '.str_replace('TM ', ' ', strip_tags($description)).'">'.ACYMAILING_NAME;

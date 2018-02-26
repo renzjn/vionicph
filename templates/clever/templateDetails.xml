@@ -49,6 +49,11 @@
 		<position>left</position>
 		<position>right</position>
 		<position>user2</position>
+    <position>trending-left</position>
+    <position>trending-right</position>
+    <position>trending-middle-text</position>
+    <position>trending-middle-left</position>
+    <position>trending-middle-right</position>
     <position>lookbook-left</position>
     <position>lookbook-right</position>
     <position>discover</position>
