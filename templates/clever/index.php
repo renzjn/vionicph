@@ -138,7 +138,7 @@ $menu = $app->getMenu();
             	<jdoc:include type="modules" name="user2" style="usergrid" grid="<?php echo $user2_width; ?>" />
             </div></div>
         <?php endif; ?>
-				<div id="trending" class="container row clr">
+				<div id="spacer-top" class="container row clr">
 				<div id="trending-text" class="module span_5 col clr "><jdoc:include type="modules" name="trending-left" /></div>
 				<div id="trending-text" class="module span_7 col clr " ><jdoc:include type="modules" name="trending-right" />
 							<div class="module span_12 col clr "><jdoc:include type="modules" name="trending-middle-text" /></div>
@@ -150,9 +150,12 @@ $menu = $app->getMenu();
 						</div>
 				</div>
 				</div>
-				<div class="container row clr">
-				<div class="module span_5 col clr "><jdoc:include type="modules" name="lookbook-left" /></div>
-				<div class="module span_6 col clr "><jdoc:include type="modules" name="lookbook-right" /></div>
+				<div id="spacer-top" class="container row clr">
+				<div id="lookbook-left" class="module span_5 col clr"><jdoc:include type="modules" name="lookbook-left" /></div>
+				<div class="module span_6 col clr ">
+					<div id="lookbook-overlay" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
+					<div class="module span_6 col clr "><jdoc:include type="modules" name="lookbook-right" /></div>
+				</div>
 				</div>
 				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>
 				<?php if ($this->countModules('elevated') || $this->countModules('natural')) : ?>
