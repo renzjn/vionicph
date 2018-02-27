@@ -40,8 +40,8 @@ $menu = $app->getMenu();
 <div id="wrapper">
 <div id="topmost">
 	<div class="container row">
-			<div class="span_6 col"><jdoc:include type="modules" name="topmost-left"  /></div>
-			<div class="span_6 col "><jdoc:include type="modules" name="topmost-right"  /></div>
+			<div class="span_7 col clr"><jdoc:include type="modules" name="topmost-left"  /></div>
+			<div class="span_3 col clr searchbox"><jdoc:include type="modules" name="topmost-right"  /></div>
 	</div>
 </div>
 <div id="topbar">
@@ -139,8 +139,8 @@ $menu = $app->getMenu();
             </div></div>
         <?php endif; ?>
 				<div id="spacer-top" class="container row clr">
-				<div id="trending-text" class="module span_5 col clr "><jdoc:include type="modules" name="trending-left" /></div>
-				<div id="trending-text" class="module span_7 col clr " ><jdoc:include type="modules" name="trending-right" />
+				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="trending-left" /></div>
+				<div id="center-mobile" class="module span_7 col clr center-mobile" ><jdoc:include type="modules" name="trending-right" />
 							<div class="module span_12 col clr "><jdoc:include type="modules" name="trending-middle-text" /></div>
 							<div class="module span_5 col clr">
 							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-left" /></div>
@@ -151,10 +151,10 @@ $menu = $app->getMenu();
 				</div>
 				</div>
 				<div id="spacer-top" class="container row clr">
-				<div id="lookbook-left" class="module span_5 col clr"><jdoc:include type="modules" name="lookbook-left" /></div>
-				<div class="module span_6 col clr ">
-					<div id="lookbook-overlay" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
-					<div class="module span_6 col clr "><jdoc:include type="modules" name="lookbook-right" /></div>
+				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="lookbook-left" /></div>
+				<div class="module span_6 col clr">
+					<div id="center-mobile" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
+					<div id="center-mobile" class="module span_6 lookbook-right"><jdoc:include type="modules" name="lookbook-right" /></div>
 				</div>
 				</div>
 				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>

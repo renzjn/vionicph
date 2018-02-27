@@ -391,6 +391,8 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 
 /*** custom CSS starts here ***/
 #topmost	{ background-color: #000000; padding: 10px; }
+.searchbox { margin: 3px auto;; float: right; }
+@media screen and (max-width: 600px) { #topmost  {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;} }
 #second-msg	{ color: #ffffff; }
 .leftmargin	{ max-width: 960px; margin: 0 auto;}
 #slide-wrap: { width: 100%}
@@ -414,20 +416,20 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .buttonbox-theme  { color: #fffff; }
 .customtrendingtext { color: #000; font-weight: 100; line-height: 1.6; margin: 0; padding: 0  ; letter-spacing: .3em; text-align: center; }
 #spacer-top { margin-top: 70px;}
-#trending-text  { text-align: center;}
-.trending-thumb { max-width: 220px; min-width: 220px; text-align: center; margin: 0 auto; width: 50%;}
+.trending-thumb { max-width: 220px; min-width: 220px; margin: 0 auto; width: 50%;}
 .customlookbook-wrapper  { position:relative; margin-left:50px;}
-.lookbook-image-right { text-align: center; }
 .lookbook-thumb { max-width: 80%;}
+.customlookbook-right-center  { text-align: center;}
 .testimonial  { width: 100%; display: inline-block; background: #fff; padding: 0; font-weight: 100; line-height: 100%; color: #000; margin-top: 30px; }
 .testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; padding: 20px;}
 .signaturetextformatting  { font-family: comic\ sans\ ms, sans-serif; font-size: 17px; color: #de9239; text-align: right !important; }
 #shop-lookbook  { width: 400px; text-align: center; margin: 15px; color: #000;}
 #shop-lookbook  a:hover  { color: #b59d9c;}
-#lookbook-left  { max-width: 384px; min-width: 384px;}
+.center-mobile  { text-align: center;}
 .custolookbookcenter  { margin: 0 auto;}
 .before-overlay { margin-left: -80px;}
-@media screen and (max-width: 600px) { #lookbook-overlay  {margin: 0 auto; width: 50%; text-align: center; width: 100%;} }
+@media screen and (max-width: 600px) { #center-mobile  { display: block; margin: 0 auto; text-align: center; width: 100%}  }
+.lookbook-right { max-width: 450px; min-width: 450px;}
 .shopunderline  { border-bottom: 1px solid #000; text-decoration: none;}
 .discovertexthead { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; width: 100%; text-align: center;}
 .discovertextcontent { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .1em; white-space: normal; margin: 0 0 20px; width: 100%; text-align: center;}
@@ -465,7 +467,6 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .divider { border-left:1px solid white; height: 160px;}
 .elevated-pad a:hover,  #footer-nav a:hover, .customfeatured a:hover { color: #b59d9c;}
 .detached { z-index: 1000; background: #fff}
-.searchbox { margin: 10px 20px 0 0;}
 
 
 
