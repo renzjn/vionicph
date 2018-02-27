@@ -57,9 +57,13 @@
     <position>lookbook-left</position>
     <position>lookbook-right</position>
     <position>lookbook-right-caption</position>
-    <position>discover</position>
-    <position>elevated</position>
-    <position>natural</position>
+    <position>lookbook-button</position>
+    <position>discover-caption</position>
+    <position>discover-image</position>
+    <position>discover-button</position>
+    <position>discover-right</position>
+    <position>user3</position>
+    <position>user4</position>
     <position>elevated-content</position>
     <position>natural-content</position>
     <position>elevated-left</position>

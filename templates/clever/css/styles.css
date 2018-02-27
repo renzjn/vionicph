@@ -418,32 +418,27 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #spacer-top { margin-top: 70px;}
 .trending-thumb { max-width: 220px; min-width: 220px; margin: 0 auto; width: 50%;}
 .customlookbook-wrapper  { position:relative; margin-left:50px;}
-.lookbook-thumb { max-width: 80%;}
+.lookbook-thumb { max-width: 450px; width: 450px;}
 .customlookbook-right-center  { text-align: center;}
 .testimonial  { width: 100%; display: inline-block; background: #fff; padding: 0; font-weight: 100; line-height: 100%; color: #000; margin-top: 30px; }
-.testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; padding: 20px;}
+.testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; }
 .signaturetextformatting  { font-family: comic\ sans\ ms, sans-serif; font-size: 17px; color: #de9239; text-align: right !important; }
-#shop-lookbook  { width: 400px; text-align: center; margin: 15px; color: #000;}
-#shop-lookbook  a:hover  { color: #b59d9c;}
+.shop-lookbook  { text-align: center; color: #000;}
+.shop-lookbook  a:hover  { color: #b59d9c;}
 .center-mobile  { text-align: center;}
 .custolookbookcenter  { margin: 0 auto;}
 .before-overlay { margin-left: -80px;}
 @media screen and (max-width: 600px) { #center-mobile  { display: block; margin: 0 auto; text-align: center; width: 100%}  }
-.lookbook-right { max-width: 450px; min-width: 450px;}
+.lookbook-right { max-width: 450px; }
 .shopunderline  { border-bottom: 1px solid #000; text-decoration: none;}
 .discovertexthead { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; width: 100%; text-align: center;}
-.discovertextcontent { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .1em; white-space: normal; margin: 0 0 20px; width: 100%; text-align: center;}
-.discover-spacer  {margin-top: 60px;}
-#discoverleftimage { width: 390px; height: 193px; margin: 0 0 0 40px; }
-#discoverbutwrapper { position: relative; width: 390px; height: 100%; margin: 50px; text-align: center; }
+.discovertextcontent { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .1em; white-space: normal; margin: 0 0 20px; text-align: center;}
+.discoverleftimage { max-width: 390px; }
+#discoverbutwrapper { max-width: 390px; height: 100%; margin: 50px; text-align: center; }
+#elevated-spacer { margin-top: 20px;}
+.elevated-padding { padding: 40px 40px; }
 .discoverbut  { cursor: pointer;}
-.discoverrightimage { position: relative; margin: 0; width: 487px; height: 402px; text-align: center !important;}
-.discoverleft  {float: left; width: 50%; height: 100%}
-.discoverright  {float: right; width: 50%; height: 100%}
-.left-text-elevated { width: 45%; float: left; }
-.right-text-elevated  { width: 45%; float: right; }
-.left-text-elevated-content { width: 40%; float: left; }
-.right-text-elevated-content  { width: 40%; float: right;}
+.discoverrightimage { position: relative; margin: 0; max-width: 487px; max-height: 402px; text-align: center !important;}
 .customcontenttext { line-height: 1.6; color: #000; font-weight: 100; margin: 0; padding: 0;}
 .customelevatedtext { height: 10px; letter-spacing: .3em; text-align: center !important; }
 .elevated-left-column { display: inline-block; float: left; width: 45%; text-align: center !important; position: relative; margin: 0; }
@@ -458,9 +453,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .vionic-footer-wrapper  {width: 100%; background-color: #000000; margin-top: -50px; height: 350px;}
 .service-slogan { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin-top: 50px; padding: 10px; letter-spacing: .4em; text-align: center !important; text-transform: uppercase; }
 .customservicegap { margin-top: 40px;}
-.elevated-bg  {background-color: #efeff0; width: 100%; height: 100px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
 .elevated-bgbot  {background-color: #efeff0; width: 100%; height: 250px; min-width: 1022px; background-size: cover; background-repeat: no-repeat;}
-.elevated-pad { padding-top: 50px;}
 .footer-left-column { display: inline-block; float: left; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
 .footer-middle-column { display: inline-block; width: 33.33%; text-align: center !important; position: relative; margin: 0; }
 .footer-right-column { display: inline-block; width: 33.33%; float: right; text-align: center !important; position: relative; margin: 0; }

@@ -154,25 +154,29 @@ $menu = $app->getMenu();
 				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="lookbook-left" /></div>
 				<div class="module span_6 col clr">
 					<div id="center-mobile" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
-					<div id="center-mobile" class="module span_6 lookbook-right"><jdoc:include type="modules" name="lookbook-right" /></div>
+					<div id="center-mobile" class="module span_12 lookbook-right"><jdoc:include type="modules" name="lookbook-right" /></div>
+					<div id="center-mobile" class="module span_12 testimonialtextformatting shop-lookbook"><jdoc:include type="modules" name="lookbook-button" /></div>
 				</div>
 				</div>
-				<div class="container row clr discover-spacer"><jdoc:include type="modules" name="discover" /></div>
-				<?php if ($this->countModules('elevated') || $this->countModules('natural')) : ?>
-				<div class="elevated-bg">
-				<div class="container row clr elevated-pad">
-					<div class="customcontenttext customelevatedtext left-text-elevated"><jdoc:include type="modules" name="elevated" /></div>
-					<div class="customcontenttext customelevatedtext right-text-elevated"><jdoc:include type="modules" name="natural" /></div>
+				<div id="spacer-top" class="container row clr">
+					<div class="module span_6 col clr">
+						<div id="center-mobile" class="module span_12 col clr"><jdoc:include type="modules" name="discover-caption" /></div>
+						<div id="center-mobile" class="module span_12 col clr discoverleftimage"><jdoc:include type="modules" name="discover-image" /></div>
+						<div id="center-mobile" class="module span_12 col clr"><jdoc:include type="modules" name="discover-button" /></div>
+					</div>
+				<div id="center-mobile" class="module span_6 col clr center-mobile discoverrightimage"><jdoc:include type="modules" name="discover-right" /></div>
 				</div>
-			</div>
+				 <?php if ($this->countModules('user3') || $this->countModules('user4')) : ?>
+				<div class="container row clr">
+					<div class="module span_6 col clr customcontenttext customelevatedtext"><jdoc:include type="modules" name="user3" /></div>
+					<div class="module span_6 col clr customcontenttext customelevatedtext"><jdoc:include type="modules" name="user4" /></div>
+				</div>
 		<?php endif ?>
 			<?php if ($this->countModules('elevated-content') || $this->countModules('natural-content')) : ?>
-				<div class="elevated-bg">
 				<div class="container row clr">
-					<div class="discovertextcontent left-text-elevated-content"><jdoc:include type="modules" name="elevated-content" /></div>
-					<div class="discovertextcontent right-text-elevated-content"><jdoc:include type="modules" name="natural-content" /></div>
+					<div class="module span_6 col clr discovertextcontent elevated-padding"><jdoc:include type="modules" name="elevated-content" /></div>
+					<div class="module span_6 col clr discovertextcontent elevated-padding "><jdoc:include type="modules" name="natural-content" /></div>
 				</div>
-			</div>
 		<?php endif; ?>
 			<?php if ($this->countModules('elevated-left') || $this->countModules('elevated-middle') || $this->countModules('elevated-right')) : ?>
 				<div class="elevated-bg">

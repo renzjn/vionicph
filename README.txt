@@ -104,6 +104,7 @@ right image size must be 488x402
 /***
 left and right module image size is 320x188
 middle video icon is 128x123
+elevated title class is "customelevatedtext"
 
 ***/
 
