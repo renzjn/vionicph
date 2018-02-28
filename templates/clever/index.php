@@ -38,7 +38,7 @@ $menu = $app->getMenu();
 </head>
 <body class="cms-index-index cms-home">
 <div id="wrapper">
-<div id="topmost">
+<div id="mobile-responsive" class="topmost">
 	<div class="container row">
 			<div class="span_7 col clr"><jdoc:include type="modules" name="topmost-left"  /></div>
 			<div class="span_3 col clr searchbox"><jdoc:include type="modules" name="topmost-right"  /></div>
@@ -91,21 +91,16 @@ $menu = $app->getMenu();
             </div>
 			</div>
 <?php } ?>
+<div id="spacer-top" class="container row clr">
  <div><jdoc:include type="modules" name="slogan1"  /></div>
  <div><jdoc:include type="modules" name="slogan2" /></div>
- <?php if ($this->countModules('user1')) : ?>
- 				<div id="user1-wrap"><div id="user1" class="container row clr">
- 					<jdoc:include type="modules" name="user1" style="usergrid" grid="<?php echo $user1_width; ?>" />
- 				</div></div>
- 		<?php endif; ?>
-		<div id="contentslide-wrapper" class="container row clr">
-			<div id="contenttext-wrapper">
+</div>
+		<div id="mobile-responsive" class="container row clr contentslide-wrapper spacer-top">
 		<jdoc:include type="modules" name="contentslidetext1" />
 		<jdoc:include type="modules" name="contentslidetext2" />
 		<jdoc:include type="modules" name="shop-men-women-buttons" />
-	</div>
-		</div>
-         <?php if ($this->countModules('breadcrumbs')) : ?>
+			</div>
+		  <?php if ($this->countModules('breadcrumbs')) : ?>
         	<jdoc:include type="modules" name="breadcrumbs"  style="none"/>
         <?php endif; ?>
 
@@ -133,11 +128,11 @@ $menu = $app->getMenu();
                             <?php endif; ?>
 	</div>
 </div>
-		<?php if ($this->countModules('user2')) : ?>
-            <div id="user2-wrap"><div id="user2" class="container row clr">
-            	<jdoc:include type="modules" name="user2" style="usergrid" grid="<?php echo $user2_width; ?>" />
-            </div></div>
-        <?php endif; ?>
+				<div id="spacer-top" class="container row clr">
+				<div id="center-mobile" class="module span_4 col clr center-mobile"><jdoc:include type="modules" name="featured1" /></div>
+				<div id="center-mobile" class="module span_4 col clr center-mobile"><jdoc:include type="modules" name="featured2" /></div>
+				<div id="center-mobile" class="module span_4 col clr center-mobile"><jdoc:include type="modules" name="featured3" /></div>
+				</div>
 				<div id="spacer-top" class="container row clr">
 				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="trending-left" /></div>
 				<div id="center-mobile" class="module span_7 col clr center-mobile" ><jdoc:include type="modules" name="trending-right" />
@@ -166,21 +161,12 @@ $menu = $app->getMenu();
 					</div>
 				<div id="center-mobile" class="module span_6 col clr center-mobile discoverrightimage"><jdoc:include type="modules" name="discover-right" /></div>
 				</div>
-				 <?php if ($this->countModules('user3') || $this->countModules('user4')) : ?>
-				<div class="container row clr">
-					<div class="module span_6 col clr customcontenttext customelevatedtext"><jdoc:include type="modules" name="user3" /></div>
-					<div class="module span_6 col clr customcontenttext customelevatedtext"><jdoc:include type="modules" name="user4" /></div>
-				</div>
-		<?php endif ?>
 			<div class="elevated-bgbot spacer-top">
-			<?php if ($this->countModules('elevated-content') || $this->countModules('natural-content')) : ?>
 				<div class="container row clr">
 					<div class="module span_6 col clr discovertextcontent elevated-padding"><jdoc:include type="modules" name="elevated-content" /></div>
 					<div class="module span_6 col clr discovertextcontent elevated-padding"><jdoc:include type="modules" name="natural-content" /></div>
 				</div>
-		<?php endif; ?>
-			<?php if ($this->countModules('elevated-left') || $this->countModules('elevated-middle') || $this->countModules('elevated-right')) : ?>
-				<div class="container row clr">
+					<div class="container row clr">
 					<div id="center-mobile" class="module span_15 col clr center-mobile">
 							<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="elevated-left" /></div>
 							<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="learnmore-left" /></div>
@@ -191,13 +177,6 @@ $menu = $app->getMenu();
 					<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="learnmore-right" /></div>
 					</div>
 				</div>
-		<?php endif; ?>
-				<?php if ($this->countModules('user5') || $this->countModules('user6')) : ?>
-						<div class="container row clr">
-							<div class="module span_6 col clr center-mobile"><jdoc:include type="modules" name="user5" /></div>
-							<div class="module span_6 col clr center-mobile"><jdoc:include type="modules" name="user6" /></div>
-						</div>
-					<?php endif; ?>
 			</div>
 			<?php if ($this->countModules('vionic-footer-top1') || $this->countModules('vionic-footer-top2') || $this->countModules('vionic-footer-top3')) : ?>
 				<div class="vionic-footer-wrapper">

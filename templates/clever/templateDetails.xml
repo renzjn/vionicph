@@ -42,13 +42,15 @@
 		<position>slogan1</position>
 		<position>slogan2</position>
 		<position>breadcrumbs</position>
-		<position>user1</position>
     <position>contentslidetext1</position>
     <position>contentslidetext2</position>
     <position>shop-men-women-buttons</position>
 		<position>left</position>
 		<position>right</position>
-		<position>user2</position>
+    <position>featured1</position>
+    <position>featured2</position>
+    <position>featured3</position>
+    <position>right</position>
     <position>trending-left</position>
     <position>trending-right</position>
     <position>trending-middle-text</position>
@@ -62,8 +64,6 @@
     <position>discover-image</position>
     <position>discover-button</position>
     <position>discover-right</position>
-    <position>user3</position>
-    <position>user4</position>
     <position>elevated-content</position>
     <position>natural-content</position>
     <position>elevated-left</position>
@@ -71,8 +71,6 @@
     <position>elevated-right</position>
     <position>learnmore-left</position>
     <position>learnmore-right</position>
-    <position>user5</position>
-    <position>user6</position>
     <position>vionic-footer-service</position>
     <position>vionic-footer-top1</position>
     <position>vionic-footer-top2</position>
