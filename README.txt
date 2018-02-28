@@ -98,6 +98,7 @@ for lookbook column overlap - margin-left: 60px;
 /***DISCOVER THE SECRET ***/
 left image size must be 390x193
 right image size must be 488x402
+button with box style="buttonbox-link buttonbox-theme discoverbut"
 ***/
 
 /*** ELEVATED AND NATURAL SECTION ***/

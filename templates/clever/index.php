@@ -154,7 +154,7 @@ $menu = $app->getMenu();
 				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="lookbook-left" /></div>
 				<div class="module span_6 col clr">
 					<div id="center-mobile" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
-					<div id="center-mobile" class="module span_12 lookbook-right"><jdoc:include type="modules" name="lookbook-right" /></div>
+					<div id="center-mobile" class="module span_12 "><jdoc:include type="modules" name="lookbook-right" /></div>
 					<div id="center-mobile" class="module span_12 testimonialtextformatting shop-lookbook"><jdoc:include type="modules" name="lookbook-button" /></div>
 				</div>
 				</div>
@@ -172,29 +172,33 @@ $menu = $app->getMenu();
 					<div class="module span_6 col clr customcontenttext customelevatedtext"><jdoc:include type="modules" name="user4" /></div>
 				</div>
 		<?php endif ?>
+			<div class="elevated-bgbot spacer-top">
 			<?php if ($this->countModules('elevated-content') || $this->countModules('natural-content')) : ?>
 				<div class="container row clr">
 					<div class="module span_6 col clr discovertextcontent elevated-padding"><jdoc:include type="modules" name="elevated-content" /></div>
-					<div class="module span_6 col clr discovertextcontent elevated-padding "><jdoc:include type="modules" name="natural-content" /></div>
+					<div class="module span_6 col clr discovertextcontent elevated-padding"><jdoc:include type="modules" name="natural-content" /></div>
 				</div>
 		<?php endif; ?>
 			<?php if ($this->countModules('elevated-left') || $this->countModules('elevated-middle') || $this->countModules('elevated-right')) : ?>
-				<div class="elevated-bg">
-				<div class="container row clr elevated-pad">
-					<div class="elevated-left-column"><jdoc:include type="modules" name="elevated-left" /></div>
-					<div class="elevated-middle-column"><jdoc:include type="modules" name="elevated-middle" /></div>
-					<div class="elevated-right-column"><jdoc:include type="modules" name="elevated-right" /></div>
-				</div>
-			</div>
-		<?php endif; ?>
-				<?php if ($this->countModules('learnmore-left') || $this->countModules('learnmore-right')) : ?>
-					<div class="elevated-bgbot">
 				<div class="container row clr">
-					<div class="learnmore-left learnmore-box"><div class="buttonbox-link buttonbox-theme discoverbut"><jdoc:include type="modules" name="learnmore-left" /></div></div>
-					<div class="learnmore-right learnmore-box"><div class="buttonbox-link buttonbox-theme discoverbut"><jdoc:include type="modules" name="learnmore-right" /></div></div>
+					<div id="center-mobile" class="module span_15 col clr center-mobile">
+							<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="elevated-left" /></div>
+							<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="learnmore-left" /></div>
+					</div>
+					<div id="center-mobile" class="module span_14 col clr center-mobile"><jdoc:include type="modules" name="elevated-middle" /></div>
+					<div id="center-mobile" class="module span_15 col clr center-mobile">
+					<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="elevated-right" /></div>
+					<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="learnmore-right" /></div>
+					</div>
 				</div>
-			</div>
+		<?php endif; ?>
+				<?php if ($this->countModules('user5') || $this->countModules('user6')) : ?>
+						<div class="container row clr">
+							<div class="module span_6 col clr center-mobile"><jdoc:include type="modules" name="user5" /></div>
+							<div class="module span_6 col clr center-mobile"><jdoc:include type="modules" name="user6" /></div>
+						</div>
 					<?php endif; ?>
+			</div>
 			<?php if ($this->countModules('vionic-footer-top1') || $this->countModules('vionic-footer-top2') || $this->countModules('vionic-footer-top3')) : ?>
 				<div class="vionic-footer-wrapper">
 				<div class="vionic-footer-alignment service-slogan"><jdoc:include type="modules" name="vionic-footer-service" /></div>
