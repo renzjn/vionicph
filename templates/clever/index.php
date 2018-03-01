@@ -182,16 +182,16 @@ $menu = $app->getMenu();
 				<div class="vionic-footer-wrapper">
 				<div class="vionic-footer-alignment service-slogan"><jdoc:include type="modules" name="vionic-footer-service" /></div>
 				<div class="container row clr">
-					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top1" /></div>
-					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top2" /></div>
-					<div class="vionic-footer-alignment module featured  span_4 col clr divider"><jdoc:include type="modules" name="vionic-footer-top3" /></div>
+					<div class="vionic-footer-alignment module featured  span_12 col clr"><jdoc:include type="modules" name="vionic-footer-top1" /></div>
+					<div class="vionic-footer-alignment module featured  span_12 col clr"><jdoc:include type="modules" name="vionic-footer-top2" /></div>
+					<div class="vionic-footer-alignment module featured  span_12 col clr" style="margin-bottom: 35px;"><jdoc:include type="modules" name="vionic-footer-top3" /></div>
 				</div>
 			</div>
 			<?php endif; ?>
-			<div class="container row clr elevated-pad">
-				<div class="footer-left-column"><jdoc:include type="modules" name="vionic-footer-bot1" /></div>
-				<div class="footer-middle-column"><jdoc:include type="modules" name="vionic-footer-bot2" /></div>
-				<div class="footer-right-column"><jdoc:include type="modules" name="vionic-footer-bot3" /></div>
+			<div id="elevated-spacer" class="container row clr">
+				<div id="center-mobile" class="module span_4 col clr center-mobile"><jdoc:include type="modules" name="vionic-footer-bot1" /></div>
+				<div id="center-mobile" class="module span_4 col clr center-mobile"><jdoc:include type="modules" name="vionic-footer-bot2" /></div>
+				<div id="center-mobile" class="module span_4 col clr center-mobile"><jdoc:include type="modules" name="vionic-footer-bot3" /></div>
 			</div>
 				<div id="footer-wrap"  class="container row clr" >
         <?php if ($this->countModules('copyright')) : ?>

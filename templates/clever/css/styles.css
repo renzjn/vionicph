@@ -444,9 +444,9 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .learnmore-left  { width: 50%; height: 20px; float: left; text-align: center !important; margin: 0; position: relative; }
 .learnmore-right  { width: 40%; height: 20px; float: right; text-align: center !important; margin: 0; position: relative; }
 .learnmore-box p { margin: 0; }
-.vionic-footer-alignment  { text-align: center !important; margin: auto; padding: 0; height: 100px;}
-.vionic-footer-alignment p  { margin: auto;}
-.vionic-footer-wrapper  {width: 100%; background-color: #000000; margin-top: -50px; height: 350px;}
+.vionic-footer-alignment  { text-align: center !important; margin: auto; padding: 0; margin-bottom: 10px;}
+.vionic-footer-alignment p  { margin: auto; color: #ffffff;}
+.vionic-footer-wrapper  {width: 100%; background-color: #000000; margin-top: -50px; height: 100%;}
 .service-slogan { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin-top: 50px; padding: 10px; letter-spacing: .4em; text-align: center !important; text-transform: uppercase; }
 .customservicegap { margin-top: 40px;}
 .elevated-bgbot  {background-color: #efeff0; width: 100%; background-size: cover; background-repeat: no-repeat;}
@@ -456,7 +456,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .divider { border-left:1px solid white; height: 160px;}
 .elevated-pad a:hover,  #footer-nav a:hover, .customfeatured a:hover { color: #b59d9c;}
 .detached { z-index: 1000; background: #fff}
-
+.acymailing_module_footer {display: block; font-size: 14px; line-height: 32px;letter-spacing:1px; text-transform:uppercase; font-weight: bold;}
 
 
 
