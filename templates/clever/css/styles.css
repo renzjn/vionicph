@@ -429,7 +429,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .trending-thumb { max-width: 220px; min-width: 220px; margin: 0 auto; width: 50%;}
 .customlookbook-wrapper  { position:relative; margin-left:50px;}
 .testimonial  { width: 100%; display: inline-block; background: #fff; padding: 0; font-weight: 100; line-height: 100%; color: #000; margin-top: 40px; }
-.testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; }
+.testimonialtextformatting { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; padding: 15px; }
 .signaturetextformatting  { font-family: comic\ sans\ ms, sans-serif; font-size: 17px; color: #de9239; text-align: right !important; }
 .shop-lookbook  { text-align: center; color: #000;}
 .shop-lookbook  a:hover  { color: #b59d9c;}
