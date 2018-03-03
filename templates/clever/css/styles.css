@@ -441,7 +441,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .discovertexthead { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .3em; white-space: normal; margin: 0 0 20px; width: 100%; text-align: center;}
 .discovertextcontent { color: #000; font-size: 14px; font-weight: 100; line-height: 100%; letter-spacing: .1em; white-space: normal; margin: 0 0 20px; text-align: center;}
 .discoverleftimage { max-width: 390px; }
-#discoverbutwrapper { margin: 50px; text-align: center !important; padding: 20px;}
+#discoverbutwrapper { margin: 10px; text-align: center !important; padding: 20px;}
 #elevated-spacer { margin-top: 20px;}
 .elevated-padding { padding: 20px 40px; }
 .customelevated-image { max-width: 320px; margin: 0 auto; text-align: center !important; }
