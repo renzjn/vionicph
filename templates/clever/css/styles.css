@@ -444,7 +444,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .discoverleftimage { max-width: 390px; }
 #discoverbutwrapper { margin: 50px; text-align: center !important; padding: 20px;}
 #elevated-spacer { margin-top: 20px;}
-.elevated-padding { padding: 40px 40px; }
+.elevated-padding { padding: 20px 40px; }
 .customelevated-image { max-width: 320px; margin: 0 auto; text-align: center !important; }
 .discoverbut  { cursor: pointer;}
 .discoverrightimage { max-width: 487px;}
