@@ -21,6 +21,7 @@ $menu = $app->getMenu();
 <?php include "functions.php"; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/styles.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/custom-css/slider-color.css" type="text/css" />
 <!--<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>css/bootstrap/css/bootstrap.min.css" type="text/css" /> -->
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/font-awesome.min.css" type="text/css" />
@@ -148,8 +149,8 @@ $menu = $app->getMenu();
 				<div id="spacer-top" class="container row clr">
 				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="lookbook-left" /></div>
 				<div class="module span_6 col clr">
-					<div id="lookbook-responsive" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
-					<div id="lookbook-mobile" class="module span_12"><jdoc:include type="modules" name="lookbook-right-caption" /></div>
+					<div id="lookbook-mobile" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
+				<!--	<div id="lookbook-mobile" class="module span_12"><jdoc:include type="modules" name="lookbook-right-caption" /></div> !-->
 					<div id="center-mobile" class="module span_12 "><jdoc:include type="modules" name="lookbook-right" /></div>
 					<div id="center-mobile" class="module span_12"><div class="testimonialtextformatting shop-lookbook"><jdoc:include type="modules" name="lookbook-button" /></div></div>
 				</div>
