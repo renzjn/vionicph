@@ -148,18 +148,21 @@ $menu = $app->getMenu();
 				<div id="spacer-top" class="container row clr">
 				<div id="center-mobile" class="module span_5 col clr center-mobile"><jdoc:include type="modules" name="lookbook-left" /></div>
 				<div class="module span_6 col clr">
-					<div id="center-mobile" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
+					<div id="lookbook-responsive" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
+					<div id="lookbook-mobile" class="module span_12"><jdoc:include type="modules" name="lookbook-right-caption" /></div>
 					<div id="center-mobile" class="module span_12 "><jdoc:include type="modules" name="lookbook-right" /></div>
-					<div id="center-mobile" class="module span_12 testimonialtextformatting shop-lookbook"><jdoc:include type="modules" name="lookbook-button" /></div>
+					<div id="center-mobile" class="module span_12"><div class="testimonialtextformatting shop-lookbook"><jdoc:include type="modules" name="lookbook-button" /></div></div>
 				</div>
-				</div>
+			</div>
 				<div id="spacer-top" class="container row clr">
 					<div class="module span_6 col clr">
-						<div id="center-mobile" class="module span_12 col clr"><jdoc:include type="modules" name="discover-caption" /></div>
-						<div id="center-mobile" class="module span_12 col clr discoverleftimage"><jdoc:include type="modules" name="discover-image" /></div>
-						<div id="center-mobile" class="module span_12 col clr"><jdoc:include type="modules" name="discover-button" /></div>
+						<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="discover-caption" /></div>
+						<div id="center-mobile" class="module span_12 col clr center-mobile"><div class="discoverleftimage center-mobile"><jdoc:include type="modules" name="discover-image" /></div></div>
+						<div id="center-mobile" class="module span_12 col clr center-mobile"><div id="spacer-top"><jdoc:include type="modules" name="discover-button" /></div></div>
 					</div>
-				<div id="center-mobile" class="module span_6 col clr center-mobile discoverrightimage"><jdoc:include type="modules" name="discover-right" /></div>
+					<div class="module span_6 col clr">
+							<div class="center-mobile"><jdoc:include type="modules" name="discover-right" /></div>
+					</div>
 				</div>
 			<div class="elevated-bgbot spacer-top">
 				<div class="container row clr">
@@ -173,8 +176,8 @@ $menu = $app->getMenu();
 					</div>
 					<div id="center-mobile" class="module span_14 col clr center-mobile"><jdoc:include type="modules" name="elevated-middle" /></div>
 					<div id="center-mobile" class="module span_15 col clr center-mobile">
-					<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="elevated-right" /></div>
-					<div id="center-mobile" class="module span_12 col clr center-mobile"><jdoc:include type="modules" name="learnmore-right" /></div>
+					<div id="center-mobile" class="module span_12 col clr"><div class="spacer-top center-mobile"><jdoc:include type="modules" name="elevated-right" /></div></div>
+					<div id="center-mobile" class="module span_12 col clr"><div class="spacer-top center-mobile"><jdoc:include type="modules" name="learnmore-right" /></div></div>
 					</div>
 				</div>
 			</div>
