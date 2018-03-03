@@ -88,7 +88,8 @@ $menu = $app->getMenu();
 <?php if (is_array($menuid) && !is_null($menu->getActive()) && in_array($menu->getActive()->id, $menuid, false)) { ?>
             <div id="slider-bg">
 			<div id="slide-wrap" class="container row clr">
-                    <?php include "slideshow.php"; ?>
+                    <div class="desktop-only"><?php include "slideshow.php"; ?></div>
+										<div id="mobile-only" class="default-mobile"><jdoc:include type="modules" name="mobile-slide" /></div>
             </div>
 			</div>
 <?php } ?>
@@ -97,9 +98,9 @@ $menu = $app->getMenu();
  <div><jdoc:include type="modules" name="slogan2" /></div>
 </div>
 		<div id="mobile-responsive" class="container row clr contentslide-wrapper spacer-top">
-		<jdoc:include type="modules" name="contentslidetext1" />
-		<jdoc:include type="modules" name="contentslidetext2" />
-		<jdoc:include type="modules" name="shop-men-women-buttons" />
+		<div id="center-mobile" class="module col clr center-mobile"><jdoc:include type="modules" name="contentslidetext1" /></div>
+		<div id="center-mobile" class="module col clr center-mobile"><jdoc:include type="modules" name="contentslidetext2" /></div>
+		<div id="center-mobile" class="module col clr center-mobile"><jdoc:include type="modules" name="shop-men-women-buttons" /></div>
 			</div>
 		  <?php if ($this->countModules('breadcrumbs')) : ?>
         	<jdoc:include type="modules" name="breadcrumbs"  style="none"/>
@@ -151,7 +152,7 @@ $menu = $app->getMenu();
 				<div class="module span_6 col clr">
 					<div id="lookbook-mobile" class="module span_12 before-overlay "><jdoc:include type="modules" name="lookbook-right-caption" /></div>
 				<!--	<div id="lookbook-mobile" class="module span_12"><jdoc:include type="modules" name="lookbook-right-caption" /></div> !-->
-					<div id="center-mobile" class="module span_12 "><jdoc:include type="modules" name="lookbook-right" /></div>
+					 <div id="center-mobile" class="module span_12 "><jdoc:include type="modules" name="lookbook-right" /></div>
 					<div id="center-mobile" class="module span_12"><div class="testimonialtextformatting shop-lookbook"><jdoc:include type="modules" name="lookbook-button" /></div></div>
 				</div>
 			</div>

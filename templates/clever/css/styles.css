@@ -414,12 +414,19 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 /***
 .customcontentslide12 { color: #fff; font-weight: 100; line-height: 100%; font-size:18px; margin: 0; padding: 0; letter-spacing: .1em; text-align: center; text-transform: uppercase; font-weight: bold;}
 .customcontentslide22 { color: #fff; font-weight: 100; line-height: 100%; font-size:24px; margin: 0; padding: 0; letter-spacing: .3em; text-align: center !important; text-transform: uppercase; font-weight: bold;} ***/
-.customcontentslide1 { color: #fff; font-weight: 100; line-height: 100%; font-size: 16px; margin: 0; padding: 0; letter-spacing: .2em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
-.customcontentslide2 { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin: 0; padding: 0; letter-spacing: .3em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
-.contentslide-wrapper { background-image: url("../../../images/full-image-section/style-doesnt-have-to-hurt-bg-large.jpg"); background-repeat: no-repeat; background-size: 100% 100%; padding: 30px; background-clip: padding-box;}
+.customcontentslide1 { color: #fff; font-weight: 100; line-height: 100%; font-size: 16px; margin-top: 50px; padding: 0; letter-spacing: .2em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
+.customcontentslide2 { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin: 20px; padding: 0; letter-spacing: .3em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
+.contentslide-wrapper { background-image: url("../../../images/full-image-section/style-doesnt-have-to-hurt-bg-large.jpg"); background-repeat: no-repeat; background-size: 100% 100%; }
 @media screen and (max-width: 768px) { #mobile-responsive  {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;} }
-@media screen and (max-width: 1024px) { #lookbook-responsive  {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;} }
-@media screen and (min-width: 1024px) { #lookbook-mobile  {text-align: center !important;} }
+.default-mobile   {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;}
+
+@media screen and (max-width: 768px)  {
+  #mobile-only {display: block !important; visibility: visible !important; width: 100%; margin: 0 auto; text-align: center; background-color: #ffffff}
+  .desktop-only { visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none; }
+  }
+
+@media screen and (max-width: 1024px) { #lookbook-mobile  {text-align: center !important; margin: 0 auto;} }
+.slide-mobile { display: none; visibility: hidden;}
 #contenttext-wrapper {  position: relative; padding: 20px; margin: 0 auto; top: 20px; text-align: center !important; display: block;}
 .custombuttontext { color: #fff; font-weight: 100; line-height: 100%; font-size: 16px; margin: 0; padding: 0; letter-spacing: .1em; text-align: center !important; text-transform: uppercase; margin-top: 80px; }
 .buttonbox-link { width: 200px; display: inline-block; transition: all 0.1s ease; opacity: 1; filter: alpha(opacity=100); background: #fff; border: 1px solid #000; padding: 9px; white-space: nowrap; font-weight: 100; line-height: normal; font-size: 15px; text-transform: uppercase; font-size: 15px; color: #000;}

@@ -39,6 +39,7 @@
     <position>topmost-right</position>
 		<position>top</position>
 		<position>menu</position>
+    <position>mobile-slide</position>
     <position>slogan1</position>
 		<position>slogan2</position>
 		<position>breadcrumbs</position>
