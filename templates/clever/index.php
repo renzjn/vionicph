@@ -42,7 +42,7 @@ $menu = $app->getMenu();
 <div id="mobile-responsive" class="topmost">
 	<div class="container row">
 			<div class="span_7 col clr"><jdoc:include type="modules" name="topmost-left"  /></div>
-			<div class="span_3 col clr searchbox"><jdoc:include type="modules" name="topmost-right"  /></div>
+			<div class="span_4 col clr searchbox"><jdoc:include type="modules" name="topmost-right"  /></div>
 	</div>
 </div>
 <div id="topbar">
@@ -72,7 +72,7 @@ $menu = $app->getMenu();
 </div>
 <div id="navbar-wrap">
     <nav id="navbar" class="container row clr">
-    	<div id="navigation" class="span_12 col clr">
+    	<div id="" class="span_12 col clr">
         	<jdoc:include type="modules" name="menu" style="menu" />
          </div>
     </nav>
