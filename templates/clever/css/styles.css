@@ -1,7 +1,7 @@
 /* Browser Reset */
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, caption, canvas, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, hgroup, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video { margin: 0; padding: 0; font-size: 100%; font-weight: inherit; font-style: inherit; text-align: inherit; background: transparent; border: 0; font-family: inherit; outline: 0; vertical-align: baseline; white-space: normal; }
 body a { color: #E95846; text-decoration: none; }
-body a:hover { text-decoration: none; color:#fff }
+body a:hover { text-decoration: none; color:#b59d9c }
 body.contentpane { padding:10px;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #000 }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover { color: #E95846 }
@@ -450,6 +450,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .discoverleftimage { max-width: 390px; }
 #discoverbutwrapper { margin: 10px; text-align: center !important; padding: 20px;}
 #elevated-spacer { margin-top: 20px;}
+#elevated-spacer  a: hover { color: black;}
 .elevated-padding { padding: 20px 40px; }
 .customelevated-image { max-width: 320px; margin: 0 auto; text-align: center !important; }
 .discoverbut  { cursor: pointer;}
@@ -476,7 +477,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .elevated-pad a:hover,  #footer-nav a:hover, .customfeatured a:hover { color: #b59d9c;}
 .detached { z-index: 1000; background: #fff}
 .acymailing_module_footer {display: block; font-size: 14px; line-height: 32px;letter-spacing:1px; text-transform:uppercase; font-weight: bold;}
-
+.content-spacer {padding-bottom: 20px;}
 
 
 /***custom css ends here ***/
