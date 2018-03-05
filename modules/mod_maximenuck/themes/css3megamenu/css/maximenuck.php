@@ -3,13 +3,6 @@ header('content-type: text/css');
 $id = htmlspecialchars($_GET['monid'], ENT_QUOTES);
 ?>
 
-/*-----------------------------------------------------------------------------------------------------------
-This theme is largely inspired by the Mega menu tutorial on net.tutsplus.com :
-http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-a-kick-butt-css3-mega-drop-down-menu/
-
-Ce theme est largement inspire du tutoriel de Mega menu sur net.tutsplus.com
-http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-a-kick-butt-css3-mega-drop-down-menu/
--------------------------------------------------------------------------------------------------------------*/
 
 .clr {clear:both;visibility: hidden;}
 
@@ -38,22 +31,11 @@ div#<?php echo $id; ?> ul.maximenuck {
 	list-style:none;
 	margin:0 auto;
 	height: auto;
-	padding:0px 20px 0px 20px;
+	padding:10px 20px 0px 20px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	filter: none;
-	background: #014464;
-	background: -moz-linear-gradient(top,  #0272a7 0%, #013953 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0272a7), color-stop(100%,#013953));
-	background: -webkit-linear-gradient(top,  #0272a7 0%,#013953 100%);
-	background: -o-linear-gradient(top,  #0272a7 0%,#013953 100%);
-	background: -ms-linear-gradient(top,  #0272a7 0%,#013953 100%);
-	background: linear-gradient(top,  #0272a7 0%,#013953 100%);
-	border: 1px solid #002232;
-	-moz-box-shadow:inset 0px 0px 1px #edf9ff;
-	-webkit-box-shadow:inset 0px 0px 1px #edf9ff;
-	box-shadow:inset 0px 0px 1px #edf9ff;
 	text-align: left;
 	zoom: 1;
 }
@@ -107,25 +89,22 @@ div#<?php echo $id; ?>.maximenuckv ul.maximenuck li.maximenuck.level1 {
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active {
-	border: 1px solid #777777;
-	background: #F4F4F4;
-	background: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	border-radius: 5px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > a,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > span.separator {
 	font-size:14px;
-	color: #EEEEEE;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	font-family:'Sintony',Arial, Helvetica, sans-serif;
+	color: #000000;
 	display:block;
 	float : none !important;
 	float : left;
 	position:relative;
 	text-decoration:none;
-	text-shadow: 1px 1px 1px #000;
 	box-shadow: none;
 	min-height : 34px;
 	outline : none;
@@ -137,22 +116,22 @@ div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > span.separator {
 	filter: none;
 }
 
-/* parent item on mouseover (if subemnus exists) horizonal menu only */
+/**** parent item on mouseover (if subemnus exists) horizonal menu only
 div#<?php echo $id; ?>.maximenuckh ul.maximenuck li.maximenuck.level1.parent:hover,
 div#<?php echo $id; ?>.maximenuckh ul.maximenuck li.maximenuck.level1.parent:hover {
 	-moz-border-radius: 5px 5px 0px 0px;
 	-webkit-border-radius: 5px 5px 0px 0px;
-	border-radius: 5px 5px 0px 0px;
-}
+	border-radius: 255px 255px 250px 0px;
+} *****/
 
-/* item color on mouseover */
+/**** item color on mouseover
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover > a span.titreck,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active > a span.titreck,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover > span.separator,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active > span.separator {
 	color : #161616;
 	text-shadow: 1px 1px 1px #ffffff;
-}
+} ****/
 
 div#<?php echo $id; ?>.maximenuckh ul.maximenuck li.level1.parent > a,
 div#<?php echo $id; ?>.maximenuckh ul.maximenuck li.level1.parent > span.separator {
@@ -165,8 +144,8 @@ div#<?php echo $id; ?>.maximenuckh ul.maximenuck li.level1.parent > span.separat
 	content: "";
 	display: block;
 	position: absolute;
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-style: solid;
 	border-width: 7px 6px 0 6px;
 	border-color: #EEEEEE transparent transparent transparent;
@@ -190,7 +169,6 @@ div#<?php echo $id; ?>.maximenuckv ul.maximenuck li.level1.parent > span.separat
 	height: 0;
 	border-style: solid;
 	border-width: 6px 0 6px 7px;
-	border-color: transparent transparent transparent #EEEEEE;
 	margin: 5px 10px 3px 0;
 	position: absolute;
 	right: 3px;
@@ -416,15 +394,10 @@ div#<?php echo $id; ?> div.floatck {
 	/*width : 180px;*/ /* default width */
 	margin: 2px 0 0 -10px;
 	text-align:left;
+	margin-left: 20px;
 	padding:5px 5px 0 5px;
-	border:1px solid #777777;
 	border-top:none;
-	background:#F4F4F4;
-	background: -moz-linear-gradient(top, #EEEEEE, #BBBBBB);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#BBBBBB));
-	-moz-border-radius: 0px 5px 5px 5px;
-	-webkit-border-radius: 0px 5px 5px 5px;
-	border-radius: 0px 5px 5px 5px;
+	background: #FFFFFF;
 	filter: none;
 	width: inherit;
 	z-index:9999;
@@ -585,8 +558,8 @@ div#<?php echo $id; ?> ul.maximenuck2 li.greybox {
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.greybox:hover,
 div#<?php echo $id; ?> ul.maximenuck2 li.greybox:hover {
-	background:#ffffff !important;
-	border:1px solid #aaaaaa;
+background:#ffffff !important;
+border:1px solid #aaaaaa;
 }
 
 

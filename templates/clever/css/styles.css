@@ -18,7 +18,7 @@ img { height:auto; max-width:100%;}
 /* .row { margin-bottom: 1.5em } */
 .col { display: block; float: left; width: 100%; }
 .col:first-child { margin-left: 0 }
-.row:after, .col:after, .clr:after, .group:after { display: block; height: 0; clear: both; content: ""; visibility: hidden; }
+.row:after, .col:after, .clrs:after, .group:after { display: block; height: 0; clear: both; content: ""; visibility: hidden; }
 @media all and (min-width:1024px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 /* grid for desktop */
 .col { margin-left: 2% }
