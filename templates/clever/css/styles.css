@@ -360,12 +360,12 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #site-description { text-align:center}
 #top { float:none}
 #menu-icon {width:100%;height: 55px; line-height:55px;text-decoration:none;background:#fff; padding:0; cursor: pointer;display: block;  -webkit-border-radius: 8px; -moz-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; }
-#menu-icon:hover,#menu-icon.active  {background-color: #dedede;}
+#menu-icon:hover,#menu-icon.active  {background-color: #ffffff;}
 .menu-icon-title { font-size:20px; padding:0 0 0 10px;}
 .icon-double-angle-down { font-size:30px; padding:0 10px 0 0; float:right; height:55px!important; line-height:55px!important;}
 #navbar{ display: none; height:auto; margin:0; padding:0;}
 /* Menu */
-#navbar-wrap { height:auto; display:block; margin:0 0 10px 0; padding:0;  border: 1px solid #dedede; background:#DEDEDE;  -webkit-border-radius: 8px; -moz-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; }
+#navbar-wrap { height:auto; display:block; margin:0 0 10px 0; padding:0;  border: 1px solid #dedede; background:#ffffff;  -webkit-border-radius: 8px; -moz-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; }
 /* Navigation */
 #navigation { padding:0 10px; display:block;}
 #navigation .menu { margin: 0; padding: 0; list-style: none; }
@@ -402,11 +402,19 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 }
 
 /*** custom CSS starts here ***/
+.form-horizontal  {position: relative; display: inline-block; text-align: center !important; margin: 0 auto}
+.nav-tabs, .hikashop_category_list  { list-style: none;}
+.hikashop_field_dropdown  { width: 150px;}
 .topmost	{ background-color: #000000; padding: 10px; }
-.searchbox { margin: 3px auto;; float: right; }
 #second-msg	{ color: #ffffff; }
 #slide-wrap: { width: 100%}
 .full { width:100%; height: 500px}
+.searchbox  {float: right;}
+@media screen and (max-width: 925px) { #search-mobile  {text-align: center !important; margin: 0 auto !important;} }
+@media screen and (max-width: 925px)  {
+  #mobile-only-cart {text-align: center !important; background-color: #ffffff; margin: 0 auto !important; width: 100%; visibility: visible; display: block; }
+  }
+  @media screen and (max-width: 925px) { #mobile-responsive-top  {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;} }
 .customslogan1 { color: #000; font-weight: 100; line-height: 100%; font-size: 18px; margin: 0; padding: 0; letter-spacing: .2em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
 .customslogan2 { color: #000; font-weight: 100; line-height: 100%; font-size: 24px; margin: 0; padding: 0; letter-spacing: .4em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
 .customfeatured { text-align: center; margin: 0 auto !important; color: #000; font-size: 16px; font-weight: 100; letter-spacing: 1.8px; line-height: 130%; vertical-align: baseline; }
@@ -424,7 +432,6 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
   #mobile-only {display: block !important; visibility: visible !important; width: 100%; margin: 0 auto; text-align: center; background-color: #ffffff}
   .desktop-only { visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none; }
   }
-
 @media screen and (max-width: 1024px) { #lookbook-mobile  {text-align: center !important; margin: 0 auto;} }
 .slide-mobile { display: none; visibility: hidden;}
 #contenttext-wrapper {  position: relative; padding: 20px; margin: 0 auto; top: 20px; text-align: center !important; display: block;}

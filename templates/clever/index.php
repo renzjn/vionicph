@@ -39,10 +39,12 @@ $menu = $app->getMenu();
 </head>
 <body class="cms-index-index cms-home">
 <div id="wrapper">
-<div id="mobile-responsive" class="topmost">
+<div id="mobile-only-cart" class="topmost">
 	<div class="container row">
-			<div class="span_7 col clrs"><jdoc:include type="modules" name="topmost-left"  /></div>
-			<div class="span_4 col clrs searchbox"><jdoc:include type="modules" name="topmost-right"  /></div>
+			<div id="mobile-responsive-top" class="span_7 col clrs"><jdoc:include type="modules" name="topmost-left"  /></div>
+			<?php if ($this->countModules('topmost-right')) : ?>
+			<div id="lookbook-mobile" class="span_5 col clrs"><div id="search-mobile" class="searchbox"><jdoc:include type="modules" name="topmost-right"  /></div></div>
+		<?php endif; ?>
 	</div>
 </div>
 <div id="topbar">
@@ -120,20 +122,6 @@ $menu = $app->getMenu();
 				<div id="center-mobile" class="module span_4 col clrs center-mobile"><jdoc:include type="modules" name="featured3" /></div>
 				</div>
 <?php endif; ?>
-<?php if ($this->countModules('trending-left') || $this->countModules('trending-right') || $this->countModules('trending-middle-text') || $this->countModules('trending-middle-left') || $this->countModules('trending-middle-right')) : ?>
-				<div id="spacer-top" class="container row clrs">
-				<div id="center-mobile" class="module span_5 col clrs center-mobile"><jdoc:include type="modules" name="trending-left" /></div>
-				<div id="center-mobile" class="module span_7 col clrs center-mobile" ><jdoc:include type="modules" name="trending-right" />
-							<div class="module span_12 col clrs "><jdoc:include type="modules" name="trending-middle-text" /></div>
-							<div class="module span_5 col clrs">
-							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-left" /></div>
-							</div>
-							<div class="module span_5 col clrs">
-							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-right" /></div>
-						</div>
-				</div>
-				</div>
-<?php endif; ?>
 <div id="box-wrap" class="container row clrs">
 	<div id="main-content" class="row span_12">
 							<?php if ($this->countModules('left')) : ?>
@@ -163,6 +151,20 @@ $menu = $app->getMenu();
 														</div>
 	</div>
 </div>
+<?php if ($this->countModules('trending-left') || $this->countModules('trending-right') || $this->countModules('trending-middle-text') || $this->countModules('trending-middle-left') || $this->countModules('trending-middle-right')) : ?>
+				<div id="spacer-top" class="container row clrs">
+				<div id="center-mobile" class="module span_5 col clrs center-mobile"><jdoc:include type="modules" name="trending-left" /></div>
+				<div id="center-mobile" class="module span_7 col clrs center-mobile" ><jdoc:include type="modules" name="trending-right" />
+							<div class="module span_12 col clrs "><jdoc:include type="modules" name="trending-middle-text" /></div>
+							<div class="module span_5 col clrs">
+							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-left" /></div>
+							</div>
+							<div class="module span_5 col clrs">
+							<div class="trending-thumb"><jdoc:include type="modules" name="trending-middle-right" /></div>
+						</div>
+				</div>
+				</div>
+<?php endif; ?>
 <?php if ($this->countModules('lookbook-left') || $this->countModules('lookbook-right-caption') || $this->countModules('lookbook-right') || $this->countModules('lookbook-button')) : ?>
 				<div id="spacer-top" class="container row clrs">
 				<div id="center-mobile" class="module span_5 col clrs center-mobile"><jdoc:include type="modules" name="lookbook-left" /></div>
