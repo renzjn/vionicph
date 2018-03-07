@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 3 or later</license>
 	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
 	<authorUrl>www.simplifyyourweb.com</authorUrl>
-	<version>2.0.1</version>
+	<version>2.1.0</version>
 	<description>PLG_SYSTEM_JQUERYEASY_XML_DESCRIPTION</description>
 	<scriptfile>installer.php</scriptfile>
 	<media folder="media" destination="syw_jqueryeasy">
@@ -58,7 +58,7 @@
 			
 				<field type="sywgroup" section="begin" />
 				
-				<field type="extensionversion" version="2.0.1" />
+				<field type="extensionversion" version="2.1.0" />
 				<field type="extensionauthor" />
 				<field type="extensionconnect" />
 				<field type="extensiontranslators" translators="PLG_SYSTEM_JQUERYEASY_TRANSLATORS" />
@@ -239,6 +239,10 @@
 <!-- 	                <option value="joomla">PLG_SYSTEM_JQUERYEASY_VALUE_JOOMLA</option>	 -->
 				</field>
 				
+				<field name="migratesubversionfrontend" type="text" default="" size="2" showon="migrateversionfrontend:3.0.0" 
+					label="PLG_SYSTEM_JQUERYEASY_FIELD_MIGRATESUBVERSION_LABEL" 
+					description="PLG_SYSTEM_JQUERYEASY_FIELD_MIGRATESUBVERSION_DESC" />
+				
 				<field type="cdnlinks" library="migrate" showon="migrateversionfrontend:1.2.1,1.3.0,1.4.1,3.0.0" />
 				
 				<field type="message" style="warning" text="PLG_SYSTEM_JQUERYEASY_WARNING_JQUERYMIGRATE3" showon="migrateversionfrontend:3.0.0" />
@@ -367,6 +371,8 @@
 	                <option value="0">JNO</option>
 	                <option value="1">JYES</option>
 	            </field>
+	            
+	            <field type="title" title="PLG_SYSTEM_JQUERYEASY_ADDITIONNALMODIFICATIONS_LABEL" color="#26a69a" />
 	            
 	            <field type="message" style="info" text="PLG_SYSTEM_JQUERYEASY_INFO_INDEPENDENT" />
 					            
@@ -523,7 +529,7 @@
 			
 			<fieldset name="regexp" label="PLG_SYSTEM_JQUERYEASY_REGEXP_LABEL">
 			
-				<field type="sywonlinehelp" url="http://www.simplifyyourweb.com/documentation/jquery-easy/configuration-profiles/regular-expressions" class="alert alert-info"
+				<field type="sywonlinehelp" url="http://www.simplifyyourweb.com/documentation/jquery-easy/regular-expressions" class="alert alert-info"
 					description="PLG_SYSTEM_JQUERYEASY_REGEXP_DESC" />
 					
 				<field type="message" text="PLG_SYSTEM_JQUERYEASY_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" />

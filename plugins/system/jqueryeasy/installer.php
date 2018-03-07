@@ -15,7 +15,7 @@ jimport('joomla.filesystem.folder');
  */
 class plgsystemjqueryeasyInstallerScript
 {	
-	static $version = '2.0.1';
+	static $version = '2.1.0';
 	static $available_languages = array('de-DE', 'en-GB', 'en-US', 'es-CO', 'es-ES', 'fr-FR', 'it-IT', 'nl-NL', 'pt-BR', 'ru-RU', 'sv-SE', 'tr-TR', 'uk-UA');
 	static $changelog_link = 'http://www.simplifyyourweb.com/downloads/jquery-easy/file/58-jquery-easy';
 	static $transifex_link = 'https://www.transifex.com/opentranslators/jquery-easy';

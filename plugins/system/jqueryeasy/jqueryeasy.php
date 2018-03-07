@@ -201,20 +201,7 @@ class plgSystemJqueryeasy extends JPlugin
 		
 		if ($this->_usejQuery) 
 		{		
-	        $jQueryVersion = $this->params->get('jqueryversion'.$suffix, '1.8');
-	        
-	        // sub-versions
-	        
-			$jQuerySubversion = trim($this->params->get('jquerysubversion'.$suffix, ''));
-			
-			$values_that_do_not_need_subversion = array('1.3', '1.4', '1.5', '1.6', '1.7', '1.8');
-			if ($jQuerySubversion == '' && !in_array($jQueryVersion, $values_that_do_not_need_subversion)) {
-				$jQuerySubversion = '0';
-			}
-			
-			if ($jQuerySubversion != '') {
-				$jQuerySubversion = '.'.$jQuerySubversion;
-			}
+	        $jQueryVersion = $this->params->get('jqueryversion'.$suffix, '1.8');	        
 			
 			// jQuery path
 			
@@ -238,6 +225,18 @@ class plgSystemJqueryeasy extends JPlugin
 		        		}
 		        	}
 		        } else {
+		        	
+		        	$jQuerySubversion = trim($this->params->get('jquerysubversion'.$suffix, ''));
+		        	
+		        	$values_that_do_not_need_subversion = array('1.3', '1.4', '1.5', '1.6', '1.7', '1.8');
+		        	if ($jQuerySubversion == '' && !in_array($jQueryVersion, $values_that_do_not_need_subversion)) {
+		        		$jQuerySubversion = '0';
+		        	}
+		        	
+		        	if ($jQuerySubversion != '') {
+		        		$jQuerySubversion = '.'.$jQuerySubversion;
+		        	}
+		        	
 		        	$this->_jqpath = $protocole.'//ajax.googleapis.com/ajax/libs/jquery/'.$jQueryVersion.$jQuerySubversion.'/jquery'.$compressed.'.js';
 		        }
 			}
@@ -281,7 +280,26 @@ class plgSystemJqueryeasy extends JPlugin
 			        			}
 			        		}        		
 			        	} else {
-			        		$this->_jqmigratepath = $protocole.'//code.jquery.com/jquery-migrate-'.$migrateVersion.$compressed.'.js';
+			        		
+			        		if ($migrateVersion == '3.0.0') { // for backward compatibility
+			        			$migrateVersion = '3.0';
+			        		}
+			        		
+			        		$migrateSubversion = trim($this->params->get('migratesubversion'.$suffix, ''));
+			        		
+			        		$values_that_do_not_need_subversion = array('1.2.1', '1.3.0', '1.4.1');
+			        		
+			        		if (in_array($migrateVersion, $values_that_do_not_need_subversion)) {
+			        			$migrateSubversion = '';
+			        		} else if ($migrateSubversion == '') { // missing sub-version
+			        			$migrateSubversion = '0';
+			        		}
+			        		
+			        		if ($migrateSubversion != '') {
+			        			$migrateSubversion = '.'.$migrateSubversion;
+			        		} 			        		
+			        		
+			        		$this->_jqmigratepath = $protocole.'//code.jquery.com/jquery-migrate-'.$migrateVersion.$migrateSubversion.$compressed.'.js';
 			        	}        
 			        }
 	        	} else {
@@ -314,8 +332,6 @@ class plgSystemJqueryeasy extends JPlugin
 			if ($this->_usejQueryUI) 
 			{						
 				$jQueryUIVersion = $this->params->get('jqueryuiversion'.$suffix, '1.9');
-				
-				// sub-versions
 				
 				$jQueryUISubversion = trim($this->params->get('jqueryuisubversion'.$suffix, ''));
 				
@@ -407,15 +423,13 @@ class plgSystemJqueryeasy extends JPlugin
 		$doc = JFactory::getDocument();	
 		
 		$time_start = microtime(true);
-		
-		//$jquery_from_jui = array();
-		
+				
 		// check if jQuery and Bootstrap are used in the template (nothing in $headerdata before 'onBeforeRender' other than what has been added in the plugin)
 		if ($this->_showreport) {
 		
 			$headerdata = $doc->getHeadData();
 			$scripts = $headerdata['scripts'];
-			//$media_quoted_path = preg_quote('media/jui/js/', '/');
+			
 			$jquery_quoted_path = preg_quote('media/jui/js/jquery', '/');
 			$jqueryui_quoted_path = preg_quote('media/jui/js/jquery.ui', '/');
 			$bootstrap_quoted_path = preg_quote('media/jui/js/bootstrap', '/');
@@ -445,15 +459,6 @@ class plgSystemJqueryeasy extends JPlugin
 						$bootstrap_loaded_by_template = true;
 					}
 				}
-				
-				// TODO do I really need to do that? probably never going to be used
-				// keep every jquery scripts except the jQuery and jQuery UI libraries and jquery-noconflict.js
-				// will need to re-inject those into the page once the cleanup has been done
-				//if (preg_match('#'.$media_quoted_path.'#s', $url)) {
-					//if (preg_match('#jquery#s', $url)) {
-						//$jquery_from_jui[$url] = $type;
-					//}
-				//}	
 			}
 		}
 
@@ -461,65 +466,99 @@ class plgSystemJqueryeasy extends JPlugin
 		// we have jQuery, MooTools and other libraries loaded in that order
 		// take all 'media/system/js' libraries and put them in front of all others	
 		
-		$headerdata = $doc->getHeadData();
-		$scripts = $headerdata['scripts'];
-		$headerdata['scripts'] = array();
+		$headerdata = $doc->getHeadData();		
 				
 		$ignore_caption = $this->params->get('disablecaptions', 0);
-		$library_needing_mootools_present = false;
+		$disable_mootools = $this->params->get('disablemootools', 0);
 		
+		$library_needing_mootools_present = false;		
 		$js_needing_mootools = array('mooRainbow.js', 'mootree.js'); // TODO ? add modal.js
-		$js_to_ignore = array('mootools-core.js', 'mootools-more.js'); // uncompressed versions are not taken into account because used for debug
-
+		
 		// make sure we start with all jQuery Easy scripts
 		
-		foreach ($scripts as $url => $type) {
+		$scripts_jqeasy = array();
+		
+		foreach ($headerdata['scripts'] as $url => $type) {
 			if (preg_match('#JQEASY_#s', $url)) {
-				$headerdata['scripts'][$url] = $type;
-				unset($scripts[$url]);
+				$scripts_jqeasy[$url] = $type;
 			}
-		}	
+		}		
 		
-		// then with MooTools and all system scripts
-		
-		$quoted_path = preg_quote('media/system/js/', '/');	
-		foreach ($scripts as $url => $type) {
-			if (preg_match('#'.$quoted_path.'#s', $url)) {	
+		if (!empty($scripts_jqeasy)) {
+			
+			$scripts = $headerdata['scripts'];
+			$headerdata['scripts'] = array();
 				
-				foreach ($js_needing_mootools as $library) {
-					if (preg_match('#'.$quoted_path.$library.'#s', $url)) {
-						$library_needing_mootools_present = true;
+			foreach ($scripts_jqeasy as $url_jqeasy => $type_jqeasy) {
+				$headerdata['scripts'][$url_jqeasy] = $type_jqeasy;
+				unset($scripts[$url_jqeasy]);
+			}	
+			
+			// then with MooTools and all system scripts
+			
+			$quoted_path = preg_quote('media/system/js/', '/');	
+			foreach ($scripts as $url => $type) {
+				if (preg_match('#'.$quoted_path.'#s', $url)) {	
+					
+					if ($disable_mootools) {
+						foreach ($js_needing_mootools as $library) {
+							if (preg_match('#'.$quoted_path.$library.'#s', $url)) {
+								$library_needing_mootools_present = true;
+								break;
+							}
+						}
+					}
+					
+					if ($ignore_caption && preg_match('#'.$quoted_path.'caption#s', $url)) {
+						$this->_verbose_array[] = JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_REMOVEDCAPTIONLIBRARY');
+					} else {
+						$headerdata['scripts'][$url] = $type;
+					}
+					
+					unset($scripts[$url]);
+				}
+			}
+			
+			// make sure we follow with all media/jui/js scripts
+			
+			$quoted_path = preg_quote('media/jui/js/', '/');
+			foreach ($scripts as $url => $type) {
+				if (preg_match('#'.$quoted_path.'#s', $url)) {
+					$headerdata['scripts'][$url] = $type;
+					unset($scripts[$url]);
+				}
+			}
+			
+			// remaining scripts
+			
+			foreach ($scripts as $url => $type) {
+				$headerdata['scripts'][$url] = $type;
+			}
+			
+			if ($this->_showreport) {
+				$this->_verbose_array[] = JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_REORDEREDLIBRARIES');
+			}
+		} else {
+			$quoted_path = preg_quote('media/system/js/', '/');
+			
+			if ($disable_mootools) {
+				foreach ($headerdata['scripts'] as $url => $type) {
+					foreach ($js_needing_mootools as $library) {
+						if (preg_match('#'.$quoted_path.$library.'#s', $url)) {
+							$library_needing_mootools_present = true;
+							break 2;
+						}
 					}
 				}
-				
+			}
+			
+			foreach ($headerdata['scripts'] as $url => $type) {				
 				if ($ignore_caption && preg_match('#'.$quoted_path.'caption#s', $url)) {
-					//unset($headerdata['scripts'][$url]);
-				} else {
-					$headerdata['scripts'][$url] = $type;
+					unset($headerdata['scripts'][$url]);
+					$this->_verbose_array[] = JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_REMOVEDCAPTIONLIBRARY');
+					break;
 				}
-				
-				unset($scripts[$url]);
 			}
-		}
-		
-		// make sure we follow with all media/jui/js scripts
-		
-		$quoted_path = preg_quote('media/jui/js/', '/');
-		foreach ($scripts as $url => $type) {
-			if (preg_match('#'.$quoted_path.'#s', $url)) {
-				$headerdata['scripts'][$url] = $type;
-				unset($scripts[$url]);
-			}
-		}
-		
-		// remaining scripts
-		
-		foreach ($scripts as $url => $type) {
-			$headerdata['scripts'][$url] = $type;
-		}
-		
-		if ($this->_showreport) {
-			$this->_verbose_array[] = JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_REORDEREDLIBRARIES');
 		}
 	
 		// get rid of MooTools only if :
@@ -529,13 +568,17 @@ class plgSystemJqueryeasy extends JPlugin
 		// + tmpl != component (component.php used to get images from editor for instance)
 		// + not in specified pages
 		
-		if ($this->params->get('disablemootools', 0) && !$library_needing_mootools_present) {
+		if ($disable_mootools && !$library_needing_mootools_present) {
+			
 			// $_GET['view'] available if SEF URLs set to yes or not
 			if ($app->input->get('view', '') == 'form') { 
 				// do nothing
 			} else if ($app->input->get('tmpl', '') == 'component') {
 				// do nothing
 			} else {
+				
+				$js_to_ignore = array('mootools-core.js', 'mootools-more.js'); // uncompressed versions are not taken into account because used for debug
+				
 				foreach ($headerdata['scripts'] as $url => $type) {
 					$ignore = false;
 					foreach ($js_to_ignore as $library) {

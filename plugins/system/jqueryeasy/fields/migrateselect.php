@@ -19,8 +19,9 @@ class JFormFieldMigrateSelect extends JFormFieldList
 		
 		$lang = JFactory::getLanguage();
 		$lang->load('plg_system_jqueryeasy.sys', JPATH_SITE);
-				
-		$options[] = JHTML::_('select.option', '3.0.0', '3.0.0', 'value', 'text', $disable = false);
+		
+		//$options[] = JHTML::_('select.option', '3.1', '3.1.x', 'value', 'text', $disable = false);
+		$options[] = JHTML::_('select.option', '3.0.0', '3.0.x', 'value', 'text', $disable = false); // 3.0.0 kept for backward compatibility
 		$options[] = JHTML::_('select.option', '1.4.1', '1.4.1', 'value', 'text', $disable = false);
 		$options[] = JHTML::_('select.option', '1.3.0', '1.3.0', 'value', 'text', $disable = false);
 		$options[] = JHTML::_('select.option', '1.2.1', '1.2.1', 'value', 'text', $disable = false);
