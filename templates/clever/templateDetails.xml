@@ -10,7 +10,7 @@
     <copyright>Copyright 2018 - VionicShop.com</copyright>
     <license>GNU/GPL</license>
 	<description><![CDATA[
-	<h1>Clever</h1>
+	<h1>Vionicshoes</h1>
 	<img src="../templates/clever/template_thumbnail.png" align="left" style="padding-right:10px;"/>
 	<b>Joomla Template developed by <a target="_blank" href="http://JoomlaTemplates.me">JoomlaTemplates.me</a>, released under the <a target="_blank" href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a> license.<br />
 	<br />Need help to set up your template? Check out the <a target="_blank" href="http://JoomlaTemplates.me/documentation/" target="_blank">documentation</a> page.
@@ -37,7 +37,10 @@
 	<positions>
     <position>topmost-left</position>
     <position>topmost-right</position>
-		<position>top</position>
+    <position>topbar-left</position>
+    <position>topbar-right</position>
+    <position>auxiliary-menu</position>
+    <position>top</position>
 		<position>menu</position>
     <position>mobile-slide</position>
     <position>slogan1</position>
