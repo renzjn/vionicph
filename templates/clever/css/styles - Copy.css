@@ -385,7 +385,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #navigation .menu a { height:auto; color: #606060; font-weight: 400; text-align: left; text-decoration: none; cursor: pointer; line-height: 45px; font-size:16px; padding:0 10px; }
 /*drop-down styles*/
 #navigation .menu ul { border-top: none; background:#ececec; border:none; display:none }
-#navigation .menu li:hover ul { margin: 0; border-top: none; background:#ececec; border:none; display:block}
+#navigation .menu li:hover ul { margin: 0; }
 #navigation .menu ul ul.sub-menu { margin:0; padding:0; border-top: 1px solid #fff }
 #navigation .menu ul ul.sub-menu li{ margin:0; padding:0; }
 #navigation .menu ul li { border-bottom:1px solid #fff }
