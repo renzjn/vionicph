@@ -609,6 +609,7 @@ ul.hika_tabs > li.active > a:focus {
 	color:#333;
 	background-color:#fff;
 	border-color:#ccc;
+	margin-top: 10px;
 }
 .hikabtn:focus {
 	color:#333;
