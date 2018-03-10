@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< HEAD
 -- Generation Time: Mar 10, 2018 at 10:28 AM
+=======
+-- Generation Time: Mar 09, 2018 at 05:19 AM
+>>>>>>> parent of 13e16fa... v1
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
