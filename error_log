@@ -1,0 +1,80 @@
+[24-Feb-2018 14:30:20 Asia/Manila] PHP Fatal error:  Uncaught RuntimeException: Library path /libraries/legacy cannot be found. in /home/coffeecu/public_html/beta/vionic/libraries/loader.php:344
+Stack trace:
+#0 /home/coffeecu/public_html/beta/vionic/libraries/import.legacy.php(54): JLoader::registerPrefix('J', '/libraries/lega...')
+#1 /home/coffeecu/public_html/beta/vionic/includes/framework.php(15): require_once('/home/coffeecu/...')
+#2 /home/coffeecu/public_html/beta/vionic/index.php(40): require_once('/home/coffeecu/...')
+#3 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 344
+[24-Feb-2018 21:05:43 Asia/Manila] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/coffeecu/public_html/beta/vionic/connect.php on line 8
+[03-Mar-2018 13:09:00 Asia/Manila] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:09:02 Asia/Manila] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:09:52 Asia/Manila] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:09:53 Asia/Manila] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:11:30 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function datetime() in /home/coffeecu/public_html/beta/vionic/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:11:31 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function datetime() in /home/coffeecu/public_html/beta/vionic/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:11:56 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function datetime() in /home/coffeecu/public_html/beta/vionic/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:12:20 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function datetime() in /home/coffeecu/public_html/beta/vionic/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:12:21 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function datetime() in /home/coffeecu/public_html/beta/vionic/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[03-Mar-2018 13:12:22 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined function datetime() in /home/coffeecu/public_html/beta/vionic/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/coffeecu/public_html/beta/vionic/index.php on line 12
+[06-Mar-2018 16:31:02 Asia/Manila] PHP Notice:  Undefined index: default_registration_view in /home/coffeecu/public_html/beta/vionic/components/com_hikashop/views/checkout/tmpl/show_block_login.php on line 104
+[06-Mar-2018 16:31:59 Asia/Manila] PHP Notice:  Undefined index: default_registration_view in /home/coffeecu/public_html/beta/vionic/components/com_hikashop/views/checkout/tmpl/show_block_login.php on line 104
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Warning:  Illegal string offset 'background_color' in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 47
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Notice:  Uninitialized string offset: 0 in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 47
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Warning:  Illegal string offset 'text_center' in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 59
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Notice:  Uninitialized string offset: 0 in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 59
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Warning:  Illegal string offset 'margin' in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 71
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Notice:  Uninitialized string offset: 0 in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 71
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Warning:  Illegal string offset 'rounded_corners' in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 80
+[06-Mar-2018 22:25:07 Asia/Manila] PHP Notice:  Uninitialized string offset: 0 in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/module.php on line 80
+[07-Mar-2018 10:10:04 Asia/Manila] PHP Notice:  Undefined index: default_registration_view in /home/coffeecu/public_html/beta/vionic/components/com_hikashop/views/checkout/tmpl/show_block_login.php on line 104
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[10-Mar-2018 23:19:01 Asia/Manila] PHP Notice:  getimagesize(): Read error! in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 844
+[11-Mar-2018 12:59:14 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 12:59:22 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 12:59:37 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 12:59:46 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 12:59:47 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 12:59:51 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:00:47 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:01:17 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:02:07 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:05:20 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:06:25 Asia/Manila] PHP Notice:  Undefined offset: 0 in /home/coffeecu/public_html/beta/vionic/libraries/src/Application/SiteApplication.php on line 520
+[11-Mar-2018 13:06:25 Asia/Manila] PHP Notice:  Trying to get property of non-object in /home/coffeecu/public_html/beta/vionic/libraries/src/Application/SiteApplication.php on line 543
+[11-Mar-2018 13:06:25 Asia/Manila] PHP Warning:  Creating default object from empty value in /home/coffeecu/public_html/beta/vionic/libraries/src/Application/SiteApplication.php on line 543
+[11-Mar-2018 13:06:25 Asia/Manila] PHP Notice:  Undefined offset: 0 in /home/coffeecu/public_html/beta/vionic/libraries/src/Application/SiteApplication.php on line 520
+[11-Mar-2018 13:06:25 Asia/Manila] PHP Notice:  Trying to get property of non-object in /home/coffeecu/public_html/beta/vionic/libraries/src/Application/SiteApplication.php on line 543
+[11-Mar-2018 13:06:25 Asia/Manila] PHP Warning:  Creating default object from empty value in /home/coffeecu/public_html/beta/vionic/libraries/src/Application/SiteApplication.php on line 543
+[11-Mar-2018 13:06:27 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:06:29 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:10:41 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[11-Mar-2018 13:10:44 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[28-Mar-2018 16:07:24 Asia/Manila] PHP Notice:  Undefined variable: transparentIndex in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 337
+[28-Mar-2018 16:08:23 Asia/Manila] PHP Notice:  Undefined variable: transparentIndex in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 337

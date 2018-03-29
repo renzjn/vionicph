@@ -1,0 +1,5 @@
+[10-Mar-2018 17:39:51 Asia/Manila] PHP Notice:  Undefined variable: transparentIndex in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 337
+[11-Mar-2018 13:01:47 Asia/Manila] PHP Warning:  Class '\Joomla\CMS\Environment\Browser' not found in /home/coffeecu/public_html/beta/vionic/libraries/loader.php on line 651
+[28-Mar-2018 14:10:49 Asia/Manila] PHP Notice:  Undefined variable: transparentIndex in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 337
+[28-Mar-2018 14:28:03 Asia/Manila] PHP Notice:  Undefined variable: transparentIndex in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 337
+[28-Mar-2018 14:28:43 Asia/Manila] PHP Notice:  Undefined variable: transparentIndex in /home/coffeecu/public_html/beta/vionic/administrator/components/com_hikashop/helpers/image.php on line 337
