@@ -2066,4 +2066,364 @@ class ProductViewProduct extends hikashopView
 			'currencyClass' => 'class.currency',
 			'userClass' => 'class.user',
 			'popup' => 'helper.popup',
-			'quan
+			'quantityType' => 'type.quantity',
+			'uploaderType' => 'type.uploader',
+			'imageHelper' => 'helper.image',
+			'currencyType' => 'type.currency',
+			'weight' => 'type.weight',
+			'volume' => 'type.volume',
+			'characteristicType' => 'type.characteristic'
+		));
+
+		if(!empty($product_id)) {
+			$product = $productClass->getRaw($product_id, true);
+
+			if((int)$product->product_parent_id != (int)$product_parent_id)
+				return false;
+
+			$product->main = $productClass->get($product_parent_id);
+			$product->product_tax_id = $product->main->product_tax_id;
+
+			$query = 'SELECT * FROM '.hikashop_table('file').' WHERE file_ref_id = '.(int)$product_id.' AND file_type=\'product\' ORDER BY file_ordering, file_id';
+			$db->setQuery($query);
+			$product->images = $db->loadObjectList();
+
+			$query = 'SELECT * FROM '.hikashop_table('file').' WHERE file_ref_id = '.(int)$product_id.' AND file_type=\'file\' ORDER BY file_ordering, file_id';
+			$db->setQuery($query);
+			$product->files = $db->loadObjectList('file_id');
+
+			$query = 'SELECT * FROM '.hikashop_table('price').' WHERE price_product_id = ' . (int)$product_id;
+			$db->setQuery($query);
+			$product->prices = $db->loadObjectList();
+
+			$query = 'SELECT v.*, c.* FROM '.hikashop_table('variant').' AS v '.
+				' INNER JOIN '.hikashop_table('characteristic').' as c ON v.variant_characteristic_id = c.characteristic_id '.
+				' WHERE characteristic_parent_id > 0 AND variant_product_id = ' . (int)$product_id;
+			$db->setQuery($query);
+			$characteristic_values = $db->loadObjectList('characteristic_parent_id');
+
+			if(!empty($characteristic_values) && count($characteristic_values)){
+				$query = 'SELECT * FROM '.hikashop_table('characteristic').
+					' WHERE characteristic_id IN ('.implode(',',array_keys($characteristic_values)).') OR characteristic_parent_id IN ('.implode(',',array_keys($characteristic_values)).') '.
+					' ORDER BY characteristic_parent_id ASC';
+				$db->setQuery($query);
+				$characteristics = $db->loadObjectList();
+
+				$product->characteristics = array();
+				foreach($characteristics as $c) {
+					$charac_pid = ((int)$c->characteristic_parent_id == 0) ? (int)$c->characteristic_id : (int)$c->characteristic_parent_id;
+					if(!isset($product->characteristics[$charac_pid])) {
+						$product->characteristics[$charac_pid] = new stdClass();
+						$product->characteristics[$charac_pid]->values = array();
+					}
+					if(((int)$c->characteristic_parent_id == 0)) {
+						foreach($c as $k => $v)
+							$product->characteristics[$charac_pid]->$k = $v;
+					} else {
+						$product->characteristics[$charac_pid]->values[ (int)$c->characteristic_id ] = $c->characteristic_value;
+					}
+				}
+				foreach($characteristic_values as $k => $v) {
+					$product->characteristics[$k]->default_id = (int)$v->characteristic_id;
+				}
+			}
+		}
+
+		if(!empty($product->product_tax_id)) {
+			$main_tax_zone = explode(',', $config->get('main_tax_zone', ''));
+			if(count($main_tax_zone)) {
+				$main_tax_zone = array_shift($main_tax_zone);
+			}
+		}
+		if(!empty($product->prices)) {
+			foreach($product->prices as $key => $price) {
+				if(empty($price->price_value)){
+					unset($product->prices[$key]);
+				}
+			}
+			if(!empty($product->product_tax_id)) {
+				foreach($product->prices as &$price) {
+					$price->price_value_with_tax = $this->currencyClass->getTaxedPrice($price->price_value, $main_tax_zone, $product->product_tax_id);
+				}
+			}else{
+				foreach($product->prices as $key => $price) {
+					$price->price_value_with_tax = $price->price_value;
+				}
+			}
+		}
+		if(empty($product->prices)) {
+			$obj = new stdClass();
+			$obj->price_value = 0;
+			$obj->price_value_with_tax = 0;
+			$obj->price_currency_id = $main_currency;
+			$product->prices = array($obj);
+		}
+
+		$default_description_type = $config->get('default_description_type', '');
+		if(empty($product_id) && !empty($default_description_type))
+			$product->product_description_type = $default_description_type;
+
+		if($product->product_description_type == 'html')
+			$product->product_description_type = null;
+		if(!empty($product->product_description) && empty($product->product_description_raw))
+			$product->product_description_type = null;
+
+		if(!empty($product->product_description_type)) {
+			$contentparserType = hikashop_get('type.contentparser');
+			$description_types = $contentparserType->load();
+			if(!isset($description_types[ $product->product_description_type ]))
+				$product->product_description_type = null;
+		}
+
+		$editor = hikashop_get('helper.editor');
+		$editorType = $config->get('editor', '');
+		if(preg_match('/Edge/i', $_SERVER['HTTP_USER_AGENT']))
+			$editorType = 'none';
+		if(!empty($product->product_description_type)) {
+			$editorType = 'none';
+			$editor->name = 'product_variant_description_raw';
+			$editor->content = $product->product_description_raw;
+		} else {
+			$editor->name = 'product_variant_description';
+			$editor->content = $product->product_description;
+		}
+		$editor->id = 'product_variant_editors_'.time();
+		$editor->setEditor($editorType);
+		$editor->height = 200;
+		$this->assignRef('editor', $editor);
+
+		if(!isset($product->product_quantity) || $product->product_quantity < 0)
+			$product->product_quantity = JText::_('UNLIMITED');
+		if(!isset($product->product_max_per_order) || $product->product_max_per_order <= 0)
+			$product->product_max_per_order = JText::_('UNLIMITED');
+
+		$this->assignRef('product', $product);
+
+		if(hikashop_level(2)) {
+			hikashop_loadJslib('otree');
+			$joomlaAcl = hikashop_get('type.joomla_acl');
+			$this->assignRef('joomlaAcl', $joomlaAcl);
+		}
+
+		$translationHelper = hikashop_get('helper.translation');
+		if($translationHelper && $translationHelper->isMulti()) {
+			$translationHelper->load('hikashop_product', @$product->product_id, $product);
+			$this->assignRef('translationHelper', $translationHelper);
+		}
+
+		$main_currency = (int)$config->get('main_currency');
+		$this->currencyType->load($main_currency);
+		$currencies = $this->currencyType->currencies;
+		$this->assignRef('currencies', $currencies);
+		$default_currency = $this->currencyType->currencies[$main_currency];
+		$this->assignRef('default_currency', $default_currency);
+
+		$fieldsClass = hikashop_get('class.field');
+		$fieldsClass->prefix = 'variant_'.time().'_';
+		$fields = $fieldsClass->getFields('backend', $product, 'product', 'field&task=state');
+		$null = array();
+		$fieldsClass->addJS($null, $null, $null);
+		$fieldsClass->jsToggle($fields, $product, 0, $fieldsClass->prefix);
+		$this->assignRef('fieldsClass', $fieldsClass);
+		$this->assignRef('fields', $fields);
+
+		return true;
+	}
+
+	public function form_image_entry() {
+		if(empty($this->popup)) {
+			$popup = hikashop_get('helper.popup');
+			$this->assignRef('popup', $popup);
+		}
+		$imageHelper = hikashop_get('helper.image');
+		$this->assignRef('imageHelper', $imageHelper);
+	}
+
+	public function form_file_entry() {
+		$file_id = (int)hikashop_getCID();
+		$this->assignRef('cid', $file_id);
+
+		$product_id = hikaInput::get()->getInt('pid', 0);
+		$this->assignRef('product_id', $product_id);
+
+		$config = hikashop_config(false);
+		$this->assignRef('config', $config);
+
+		if(empty($this->popup)) {
+			$popup = hikashop_get('helper.popup');
+			$this->assignRef('popup', $popup);
+		}
+
+		if(empty($this->params) && empty($this->params->file_id)) {
+			$element = new stdClass();
+			if(!empty($file_id)){
+				$fileClass = hikashop_get('class.file');
+				$element = $fileClass->get($file_id);
+			}
+			$element->product_id = $product_id;
+
+			if($element->product_id){
+				$productClass = hikashop_get('class.product');
+				$product = $productClass->get($element->product_id);
+				$element->product_type = $product->product_type;
+			}
+
+			$this->assignRef('params', $element);
+		}
+	}
+
+	public function form_price_edit(){
+		$db = JFactory::getDBO();
+
+		$price_id = hikashop_getCID('price_id');
+		$this->assignRef('price_id', $price_id);
+
+		$config = hikashop_config();
+		$this->assignRef('config', $config);
+
+		$main_currency = $config->get('main_currency',1);
+
+		$form_key = hikaInput::get()->getVar('formkey','price');
+		$this->assignRef('form_key', $form_key);
+
+		$this->loadRef(array(
+			'nameboxVariantType' => 'type.namebox',
+			'currencyType' => 'type.currency',
+			'userClass' => 'class.user'
+		));
+
+		$price = null;
+		if(!empty($price_id)){
+			$query = 'SELECT * FROM #__hikashop_price WHERE price_id = '.(int)$price_id;
+			$db->setQuery($query);
+			$price = $db->loadObject();
+		}
+
+		if(empty($price)) {
+			$price = new stdClass();
+			$price->price_id = 0;
+			$price->price_access = 'all';
+			$price->price_currency_id = $main_currency;
+		} elseif(!empty($price->price_product_id)) {
+			$price->price_value_with_tax = $price->price_value;
+			$productClass = hikashop_get('class.product');
+			$product = $productClass->get($price->price_product_id);
+			if(empty($product->product_tax_id) && $product->product_type == 'variant' && !empty($product->product_parent_id)) {
+				$parentProduct = $productClass->get((int)$product->product_parent_id);
+				$product->product_tax_id = (int)$parentProduct->product_tax_id;
+				unset($parentProduct);
+			}
+			if(!empty($product->product_tax_id)) {
+				$currencyClass = hikashop_get('class.currency');
+				$config =& hikashop_config();
+				$main_tax_zone = explode(',',$config->get('main_tax_zone',1346));
+				$price->price_value_with_tax = $currencyClass->getTaxedPrice($price->price_value, array_shift($main_tax_zone), $product->product_tax_id, 5);
+			}
+		}
+
+		if(empty($price->price_min_quantity)) {
+			$price->price_min_quantity = 1;
+		}
+
+		$this->assignRef('price', $price);
+
+		if(hikashop_level(2)) {
+			hikashop_loadJslib('otree');
+			$joomlaAcl = hikashop_get('type.joomla_acl');
+			$this->assignRef('joomlaAcl', $joomlaAcl);
+		}
+
+		$this->loadJMS();
+	}
+
+	public function loadJMS(){
+		$this->jms_integration = false;
+		if(file_exists(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_multisites'.DS.'helpers'.DS.'utils.php')){
+			include_once(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_multisites'.DS.'helpers'.DS.'utils.php');
+			if(class_exists('MultisitesHelperUtils') && method_exists('MultisitesHelperUtils','getComboSiteIDs')){
+				$this->comboSiteIDs = str_replace('class="inputbox"','class="inputbox chzn-done"',MultisitesHelperUtils::getComboSiteIDs('','price[price_site_id][##]',JText::_('SELECT_A_SITE')));
+				$this->jms_integration = !empty($this->comboSiteIDs);
+			}
+		}
+	}
+
+	public function form_variants_add() {
+		$app = JFactory::getApplication();
+		$db = JFactory::getDBO();
+		$ctrl = '';
+		$this->paramBase = HIKASHOP_COMPONENT.'.'.$this->getName().'.edit';
+
+		$config = hikashop_config();
+		$this->assignRef('config', $config);
+
+		$this->loadRef(array(
+			'nameboxVariantType' => 'type.namebox',
+		));
+
+		$this->nameboxVariantType->setType('characteristic_value', array());
+
+		$product_id = hikashop_getCID('product_id');
+		$this->assignRef('product_id', $product_id);
+
+		$subtask = hikaInput::get()->getCmd('subtask', '');
+		if($subtask == 'duplicate') {
+
+		}
+		$this->assignRef('subtask', $subtask);
+
+		$characteristics = array();
+		if(!empty($product_id)) {
+			$query = 'SELECT v.*, c.* FROM '.hikashop_table('variant').' AS v '.
+				' INNER JOIN '.hikashop_table('characteristic').' as c ON v.variant_characteristic_id = c.characteristic_id '.
+				' WHERE characteristic_parent_id = 0 AND variant_product_id = ' . (int)$product_id . ' ORDER BY ordering';
+			$db->setQuery($query);
+			$characteristics = $db->loadObjectList('characteristic_id');
+		}
+		$this->assignRef('characteristics', $characteristics);
+	}
+
+	public function edit_translation() {
+		$language_id = hikaInput::get()->getInt('language_id', 0);
+		$this->assignRef('language_id', $language_id);
+
+		$product_id = hikashop_getCID('product_id');
+
+		$config = hikashop_config();
+		$this->assignRef('config', $config);
+
+		$productClass = hikashop_get('class.product');
+		$product = $productClass->getRaw($product_id);
+
+		$translationHelper = hikashop_get('helper.translation');
+		if($translationHelper && $translationHelper->isMulti()) {
+			$translationHelper->load('hikashop_product', @$product->product_id, $product, $language_id);
+			$this->assignRef('translationHelper', $translationHelper);
+		}
+
+		$editor = hikashop_get('helper.editor');
+		$editor->setEditor($config->get('editor', ''));
+		$editor->content = @$product->product_description;
+		$editor->height = 300;
+		$this->assignRef('editor', $editor);
+
+		$toggle = hikashop_get('helper.toggle');
+		$this->assignRef('toggle', $toggle);
+
+		$this->assignRef('product', $product);
+
+		$fieldsClass = hikashop_get('class.field');
+		$fields = $fieldsClass->getFields('backend', $product, 'product', 'field&task=state');
+		$this->assignRef('fieldsClass', $fieldsClass);
+		$this->assignRef('fields', $fields);
+
+
+		$this->toolbar = array(
+			array(
+				'url' => '#save',
+				'linkattribs' => 'onclick="return window.hikashop.submitform(\'save_translation\',\'adminForm\');"',
+				'icon' => 'save',
+				'name' => JText::_('HIKA_SAVE'), 'pos' => 'right'
+			)
+		);
+	}
+}
