@@ -486,4 +486,10 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .detached { z-index: 1000; background: #fff}
 .acymailing_module_footer {display: block; font-size: 14px; line-height: 32px;letter-spacing:1px; text-transform:uppercase; font-weight: bold;}
 .content-spacer {padding-bottom: 20px;}
+
+/**** custom hika css ***/
+.relatedmod{  padding-top: 20px; }
+#hikashop_category_information_module_159 .hikashop_products_pagination{  display: none;  }
+/*** custom hika css end ***/
+
 /***custom css ends here ***/
