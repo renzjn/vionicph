@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.9.1
+ * @version	5.9.6
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -280,7 +280,7 @@ function acymailing_initJSStrings($includejs = 'header', $params = null){
 	$js = "	if(typeof acymailingModule == 'undefined'){
 				var acymailingModule = Array();
 			}
-
+			
 			acymailingModule['emailRegex'] = /^".acymailing_getEmailRegex(true)."$/i;
 
 			acymailingModule['NAMECAPTION'] = '".str_replace("'", "\'", $nameCaption)."';
@@ -488,16 +488,8 @@ function acymailing_footer(){
 		<!-- version '.$config->get('level').' : '.$config->get('version').' -->';
 	if(acymailing_level(1) && !acymailing_level(4)) return $text;
 	$level = $config->get('level');
-
-
-	/*$text .= '<div class="acymailing_footer" align="center" style="text-align:center"><a href="https://www.acyba.com/?utm_source=acymailing-'.$level.'&utm_medium=front-end&utm_content=txt&utm_campaign=powered-by" target="_blank" title="'.ACYMAILING_NAME.' : '.str_replace('TM ', ' ', strip_tags($description)).'">'.ACYMAILING_NAME;
-=======
-/*	$text .= '<div class="acymailing_footer" align="center" style="text-align:center"><a href="https://www.acyba.com/?utm_source=acymailing-'.$level.'&utm_medium=front-end&utm_content=txt&utm_campaign=powered-by" target="_blank" title="'.ACYMAILING_NAME.' : '.str_replace('TM ', ' ', strip_tags($description)).'">'.ACYMAILING_NAME;
->>>>>>> 11875f9081dad15a621eaa866a79866fea4b236d
-=======
-/*	$text .= '<div class="acymailing_footer" align="center" style="text-align:center"><a href="https://www.acyba.com/?utm_source=acymailing-'.$level.'&utm_medium=front-end&utm_content=txt&utm_campaign=powered-by" target="_blank" title="'.ACYMAILING_NAME.' : '.str_replace('TM ', ' ', strip_tags($description)).'">'.ACYMAILING_NAME;
->>>>>>> 11875f9081dad15a621eaa866a79866fea4b236d
-	$text .= ' - '.$description.'</a></div>'; */
+	$text .= '<div class="acymailing_footer" align="center" style="text-align:center"><a href="https://www.acyba.com/?utm_source=acymailing-'.$level.'&utm_medium=front-end&utm_content=txt&utm_campaign=powered-by" target="_blank" title="'.ACYMAILING_NAME.' : '.str_replace('TM ', ' ', strip_tags($description)).'">'.ACYMAILING_NAME;
+	$text .= ' - '.$description.'</a></div>';
 	return $text;
 }
 
@@ -833,7 +825,7 @@ function acymailing_sortablelist($table, $ordering){
 					set: function (sortable) {
 						var cid = sortable.toArray();
 						var order = [".$ordering."];
-
+						
 						var xhr = new XMLHttpRequest();
 						xhr.open('GET', '".acymailing_prepareAjaxURL($table)."&task=saveorder&'+cid.join('&')+'&'+order.join('&')+'&".acymailing_getFormToken()."');
 						xhr.send();
@@ -1261,7 +1253,7 @@ function acymailing_accessList(){
 	if(!empty($currentUserid) && $currentUserid == (int)$myList->userid) return true;
 	if(empty($currentUserid) || $myList->access_manage == 'none') return false;
 	if($myList->access_manage != 'all' && !acymailing_isAllowed($myList->access_manage)) return false;
-
+	
 	return true;
 }
 

@@ -2,7 +2,7 @@
 <extension type="module" version="3.3" client="site" method="upgrade">
     <name>JMG Img Hover</name>
     <author>Otto Szekeres</author>
-    <version>1.4.3</version>
+    <version>1.5.3</version>
     <description><![CDATA[
     <link rel="stylesheet" href="../modules/mod_jmg_imghover/theme/css/admin.css" type="text/css" />
     <div class="jmg-admin-panel">
@@ -15,7 +15,7 @@
 			<div class="jmg-admin-col-9">
 				<fieldset>
 				<legend>JMG Img Hover</legend>
- 				<p><i>Version 1.4.3</i></p>
+ 				<p><i>Version 1.5.3</i></p>
 				<p>is based on &copy;&nbsp;Pure CSS Image Hover Effect Library allowing you to easily implement scaleable image hover effects.</p>
 				 <p>&copy;&nbsp;2012-2017&nbsp;Joomla! dewelopment&nbsp;<a href="http://www.joomega.com" target="_blank">Otto Szekeres</a></p>
 				<p>- CSS development&nbsp;<a class="btn" href="http://imagehover.io" target="_blank">imagehover.io</a> Many thanks for the great job.</p>
@@ -147,6 +147,7 @@
 					description="MOD_JMG_IMGHOVER_LINK_TYPE">
 				  	<option value="1">Menu Item</option>
 				  	<option value="2">URL</option>
+				  	<option value="3">Pop-up</option>
 			  	</field>
 				
 				<field name="mod_jmg_imghover_menu_id" 
@@ -163,6 +164,15 @@
 					label="MOD_JMG_IMGHOVER_URL"
 					showon="mod_jmg_imghover_link_type:2"
 					description="MOD_JMG_IMGHOVER_URL"
+					filter="string"
+				/>
+       	
+       			<field name="mod_jmg_imghover_pop_up_image"
+					type="media"
+					default=""
+					label="MOD_JMG_IMGHOVER_IMAGE"
+					showon="mod_jmg_imghover_link_type:3"
+					description="MOD_JMG_IMGHOVER_IMAGE"
 					filter="string"
 				/>
         	

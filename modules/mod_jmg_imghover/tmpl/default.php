@@ -11,6 +11,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 $doc  = JFactory::getDocument();
 $doc->addStyleSheet(Juri::base() . 'modules/mod_jmg_imghover/assets/css/mod_jmg_imghover.css');
+if($mod_jmg_imghover_link_type == 3)$doc->addScript(Juri::base() . 'modules/mod_jmg_imghover/assets/js/mod_jmg_imghover.js');
 $script = 'document.addEventListener("touchstart", function(){}, true);';
 $doc->addScriptDeclaration( $script );
  ?>
@@ -21,6 +22,16 @@ $doc->addScriptDeclaration( $script );
         <h2><?php echo $mod_jmg_imghover_head;?></h2>
         <p><?php echo $mod_jmg_imghover_text;?></p>
     </figcaption>
-    <a href="<?php echo $mod_jmg_imghover_menu_link;?>" target="<?php echo $mod_jmg_imghover_menu_target;?>"></a>
+    <a class="<?php echo $mod_jmg_imghover_class;?>" href="<?php echo $mod_jmg_imghover_link;?>" target="<?php echo $mod_jmg_imghover_menu_target;?>"></a>
 </figure>
 </div>	
+
+
+<?php if ($mod_jmg_imghover_link_type == 3): ?>
+<div class="mod-jmg-imghover-popup-modal">
+	<div class="mod-jmg-imghover-popup-inner">
+		<img src="<?php echo $mod_jmg_imghover_pop_up_image;?>" />
+		<a class="mod-jmg-imghover-popup-close" href="#">x</a>
+	</div>
+</div>
+<?php endif; ?>

@@ -1,115 +1,72 @@
-/*** HEADER LOGO ***/
-/***
-modified header to center the vionic logo by removing its columns.
-affects social buttons on header.
-to revert replace <div id="logo" class="customheader"> with <div id="logo" class="col span_4">
-***/
+1- What is this?
+	* This is a Joomla! installation/upgrade package to version 3.x
+	* Joomla! Official site: https://www.joomla.org
+	* Joomla! 3.8 version history - https://docs.joomla.org/Special:MyLanguage/Joomla_3.8_version_history
+	* Detailed changes in the Changelog: https://github.com/joomla/joomla-cms/commits/staging
 
+2- What is Joomla?
+	* Joomla! is a Content Management System (CMS) which enables you to build Web sites and powerful online applications.
+	* It's a free and Open Source software, distributed under the GNU General Public License version 2 or later.
+	* This is a simple and powerful web server application and it requires a server with PHP and either MySQL, PostgreSQL or SQL Server to run.
+	You can find full technical requirements here: https://downloads.joomla.org/technical-requirements.
 
-/*** FEATURED SHOES ***/
-/***
-position: USER1
-just add image and position it in user1
-SAMPLE CODE BELOW:
-<p><img src="images/dummy-products/product-tile-shop-flats.jpg" alt="product tile shop flats" /></p>
-<p>ALL-DAY FLATS</p>
-<p><a href="#">Shop Flats</a></p>
-<p>&nbsp;</p>
-***/
+3- Is Joomla! for you?
+	* Joomla! is the right solution for most content web projects: https://docs.joomla.org/Special:MyLanguage/Portal:Learn_More
+	* See Joomla's core features - https://www.joomla.org/core-features.html
+	* Try out our online demo: https://demo.joomla.org
 
-/*** SHOP MEN AND WOMEN BUTTONS ***/
-/***position: shop-men-women-buttons
-use the joomla WYSWYG editor and switch to code edit and use the format <a class="buttonbox-link buttonbox-theme" href="#">SHOP WOMEN</a> <a <a class="buttonbox-link buttonbox-theme" href="#"> href="#">SHOP MEN</a>
-don't forget to remove the <p> tag
-***/
+4- How to find a Joomla! translation?
+	* Repository of accredited language packs: https://community.joomla.org/translations.html
+	* You can also add languages directly to your website via your Joomla! administration panel: https://docs.joomla.org/Special:MyLanguage/J3.x:Setup_a_Multilingual_Site/Installing_New_Language
+	* Learn how to setup a Multilingual Joomla! Site: https://docs.joomla.org/Special:MyLanguage/J3.x:Setup_a_Multilingual_Site
 
-/*** TRENDING SHOES ***/
-/***
-position: user2
-trending image size should be 221pxx143.67px
-content left image must be on top of the trending shoes in module order
-left image must be 378px501px
-to adapt the primary text design, add "trendingtext" in the Module Class Suffix of the module
+5- Learn Joomla!
+	* Read Getting Started with Joomla to find out the basics: https://docs.joomla.org/Special:MyLanguage/J3.x:Getting_Started_with_Joomla!
+	* Before installing, read the beginners guide: https://docs.joomla.org/Special:MyLanguage/Portal:Beginners
 
-SAMPLE CODE BELOW:
-<table style="width: 639px; height: 534px;" cellpadding="5">
-<tbody>
-<tr>
-<td colspan="2">&nbsp;&nbsp;
-<p class="title" style="text-align: center;"><strong>TRENDS: ESPADRILLES</strong></p>
-<p class="supporting-text gap-bottom-reg" style="text-align: center;">Showcase the newest boho trend and choose the silhouette that compliments your style.</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;">
-<p><img src="images/dummy-products/trend-shoes-vero.jpg" alt="trend shoes vero" width="220" height="143.67" /></p>
-<p>VERO</p>
-</td>
-<td style="text-align: center;">
-<p><img src="images/dummy-products/trend-shoes-kadyn.jpg" alt="trend shoes kadyn" width="221" height="143.67" /></p>
-<p>KADYN</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;">
-<p><img src="images/dummy-products/trend-shoes-santorini.jpg" alt="trend shoes santorini" width="221" height="143.67" /></p>
-<p>SANTORINI</p>
-</td>
-<td style="text-align: center;">
-<p><img src="images/dummy-products/trend-shoes-sandy.jpg" alt="trend shoes sandy" width="220" height="143.67" /></p>
-<p>SANDY</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="title" style="text-align: center;"></p>
-<p>&nbsp;</p>
-***/
+6- What are the benefits of Joomla?
+	* The functionality of a Joomla! website can be extended by installing extensions that you can create (or download) to suit your needs.
+	* There are many ready-made extensions that you can download and install.
+	* Check out the Joomla! Extensions Directory (JED): https://extensions.joomla.org
 
-/*** LOOKBOOK section ***/
-/***
-position: lookbook
-left image size must be 384pxx713.333px
-***/
+7- Is it easy to change the layout display?
+	* The layout is controlled by templates that you can edit.
+	* There are a lot of ready-made professional templates that you can download.
+	* Check out the template management information: https://docs.joomla.org/Special:MyLanguage/Portal:Template_Management
 
-/*** LOOKBOOK TESTIMONIAL ***/
-/***
-add class="testimonial" in the div to adapt overlapping
-add class="testimonialtextformatting" to adapt font format
-add class="signature" in the div to adapt signature format
-add class="lookbook-image-right" to position the image to the right below testimonial and signature
-add id="shop-lookbook" and Class="testimonialtextformatting" to position and format the "SHOP REAGAN"
-and add class="shopunderline" to decorate the link it a bottom border
+8- Ready to install Joomla?
+	* Check the minimum requirements here: https://downloads.joomla.org/technical-requirements
+	* How do you install Joomla - https://docs.joomla.org/Special:MyLanguage/J3.x:Installing_Joomla
+	* You could start your Joomla! experience building your site on a local test server.
+	When ready it can be moved to an online hosting account of your choice.
+	See the tutorial: https://docs.joomla.org/Special:MyLanguage/Installing_Joomla_locally
 
-SAMPLE CODE BELOW:
-for lookbook column overlap - margin-left: 60px;
-<div class="lookbook-image-left"><img src="images/full-image-section/lookbook-lifestyle-reagan.jpg" alt="lookbook lifestyle reagan" width="384" height="713.333" /></div>
-<div class="testimonial">
-<div class="testimonialtextformatting">“I need shoes that can get me through my entire day, but they have to be chic. Reagan is definitely both... and more!”</div>
-<div class="signaturetextformatting">
-<p>-Carlina, <small>Allergictovanilla.com</small></p>
-</div>
-</div>
-<div class="lookbook-image-right"><img src="images/full-image-section/lookbook-reagan-bg.jpg" alt="lookbook reagan bg" width="400" height="400" />
-<div id="shop-lookbook" class="testimonialtextformatting"><a href="#link_tab" class="shopunderline">SHOP REAGAN</a></div>
-</div>
-***/
+9- Updates are free!
+	* Always use the latest version: https://downloads.joomla.org/latest
 
-/***DISCOVER THE SECRET ***/
-left image size must be 390x193
-right image size must be 488x402
-button with box style="buttonbox-link buttonbox-theme discoverbut"
-***/
+10- Where can you get support and help?
+	* The Joomla! Documentation: https://docs.joomla.org/Special:MyLanguage/Main_Page
+	* FAQ Frequently Asked Questions: https://docs.joomla.org/Special:MyLanguage/Category:FAQ
+	* Find the information you need: https://docs.joomla.org/Special:MyLanguage/Start_here
+	* Find help and other users: https://www.joomla.org/about-joomla/create-and-share.html
+	* Post questions at our forums: https://forum.joomla.org
+	* Joomla! Resources Directory (JRD): https://resources.joomla.org/
 
-/*** ELEVATED AND NATURAL SECTION ***/
-/***
-left and right module image size is 320x188
-middle video icon is 128x123
-elevated title class is "customelevatedtext"
+11- Do you already have a Joomla! site that's not built with Joomla! 3.x ?
+	* What's new in Joomla! 3.x: https://www.joomla.org/3
+	* What are the main differences from 2.5 to 3? https://docs.joomla.org/Special:MyLanguage/What_are_the_major_differences_between_Joomla!_2.5_and_3.x%3F
+	* How to migrate from 2.5.x to 3.x? Tutorial: https://docs.joomla.org/Special:MyLanguage/Joomla_2.5_to_3.x_Step_by_Step_Migration
+	* How to migrate from 1.5.x to 3.x? Tutorial: https://docs.joomla.org/Special:MyLanguage/Joomla_1.5_to_3.x_Step_by_Step_Migration
 
-***/
+12- Do you want to improve Joomla?
+	* Where to request a feature? https://issues.joomla.org
+	* How do you report a bug? https://docs.joomla.org/Special:MyLanguage/Filing_bugs_and_issues
+	* Get Involved: Joomla! is a community developed software. Join the community at https://volunteers.joomla.org
+	* Documentation for Developers: https://docs.joomla.org/Special:MyLanguage/Portal:Developers
+	* Documentation for Web designers: https://docs.joomla.org/Special:MyLanguage/Web_designers
 
-/*** SOCIAL ICONS ***/
-/***
-size: 35x25
-***/
+Copyright:
+	* Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.
+	* Special Thanks: https://docs.joomla.org/Special:MyLanguage/Joomla!_Credits_and_Thanks
+	* Distributed under the GNU General Public License version 2 or later
+	* See Licenses details at https://docs.joomla.org/Special:MyLanguage/Joomla_Licenses
