@@ -109,7 +109,7 @@ class JFormFieldCDNLinks extends JFormField
 				$title = '';
 				$class = '';
 				if ($cdn == $chosen_cdn) {
-					$label_style = ' label-default';
+					$label_style = ' label-success';
 					$title = ' title="'.JText::_('PLG_SYSTEM_JQUERYEASY_FIELD_SELECTEDCDN').'"';
 					$class = ' class="hasTooltip"';
 				}

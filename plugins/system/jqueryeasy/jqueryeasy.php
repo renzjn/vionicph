@@ -4,10 +4,8 @@
  * @license		GNU General Public License version 3 or later; see LICENSE.txt
 */
 
-// no direct access
 defined( '_JEXEC' ) or die;
 
-// import library dependencies
 jimport('joomla.plugin.plugin');
 jimport('joomla.filesystem.file');
 
@@ -20,6 +18,11 @@ class plgSystemJqueryeasy extends JPlugin
 		$this->loadLanguage();
 		
 		$this->_enabled = true;
+		
+		$this->_versioning = $this->params->get('versioning', false);
+		if (version_compare(JVERSION, '3.2', 'lt')) {
+			$this->_versioning = false;
+		}
 		
 		$this->_supplement_scripts = array();
 		$this->_supplement_stylesheets = array();
@@ -145,7 +148,11 @@ class plgSystemJqueryeasy extends JPlugin
 		if (!empty($javascript)) {
 			$this->_supplement_scripts = array_map('trim', (array) explode("\n", $javascript));
 			foreach($this->_supplement_scripts as $i => $path) {
-				$doc->addScript($i.'ADD_SCRIPT_HERE');
+				if (JUri::isInternal(JUri::base().$path) || JUri::isInternal($path)) {
+					self::addScript($i.'ADD_SCRIPT_HERE', $this->_versioning);
+				} else {
+					self::addScript($i.'ADD_SCRIPT_HERE');
+				}
 			}
 		}
 		
@@ -166,7 +173,11 @@ class plgSystemJqueryeasy extends JPlugin
 		if (!empty($css)) {
 			$this->_supplement_stylesheets = array_map('trim', (array) explode("\n", $css));
 			foreach($this->_supplement_stylesheets as $i => $path) {
-				$doc->addStyleSheet($i.'ADD_STYLESHEET_HERE');
+				if (JUri::isInternal(JUri::base().$path) || JUri::isInternal($path)) {
+					self::addStyleSheet($i.'ADD_STYLESHEET_HERE', $this->_versioning);
+				} else {
+					self::addStyleSheet($i.'ADD_STYLESHEET_HERE');
+				}
 			}
 		}
 		
@@ -242,7 +253,11 @@ class plgSystemJqueryeasy extends JPlugin
 			}
 			
 	        if (!empty($this->_jqpath)) {
-	        	$doc->addScript('JQEASY_JQLIB');	
+	        	if ($jQueryVersion == 'joomla' || $jQueryVersion == 'local') {
+	        		self::addScript('JQEASY_JQLIB', $this->_versioning);	
+	        	} else {
+	        		self::addScript('JQEASY_JQLIB');
+	        	}
 	        }	
 			
 			// jQuery Migrate
@@ -309,7 +324,11 @@ class plgSystemJqueryeasy extends JPlugin
 	        	}
 				
 		        if (!empty($this->_jqmigratepath)) {
-		        	$doc->addScript('JQEASY_JQMIGRATELIB');	
+		        	if ($migrateVersion == 'joomla' || $migrateVersion == 'local') {
+		        		self::addScript('JQEASY_JQMIGRATELIB', $this->_versioning);	
+		        	} else {
+		        		self::addScript('JQEASY_JQMIGRATELIB');
+		        	}
 		        }	
 	        }	
 			
@@ -319,7 +338,7 @@ class plgSystemJqueryeasy extends JPlugin
 			if ($addjQueryNoConflict == 1) {
 	        	$doc->addScriptDeclaration('JQEASY_JQNOCONFLICT');
 			} else if ($addjQueryNoConflict == 2) {
-				$doc->addScript('JQEASY_JQNOCONFLICT');
+				self::addScript('JQEASY_JQNOCONFLICT', $this->_versioning);
 				 if ($jQueryVersion == 'joomla') {
 				 	$this->_jqnoconflictpath = JURI::root(true).'/media/jui/js/jquery-noconflict.js';
 				 } else {
@@ -372,7 +391,11 @@ class plgSystemJqueryeasy extends JPlugin
 				}
 				
 				if (!empty($this->_jquipath)) {
-					$doc->addScript('JQEASY_JQUILIB');
+					if ($jQueryUIVersion == 'joomla' || $jQueryUIVersion == 'local') {
+						self::addScript('JQEASY_JQUILIB', $this->_versioning);
+					} else {
+						self::addScript('JQEASY_JQUILIB');
+					}
 				}
 				
 				// jQuery UI CSS path
@@ -398,7 +421,11 @@ class plgSystemJqueryeasy extends JPlugin
 					}
 					
 					if (!empty($this->_jquicsspath)) {
-						$doc->addStyleSheet('JQEASY_JQUICSS');
+						if ($jQueryUITheme == 'custom' || $jQueryUIVersion == 'joomla' || $jQueryUIVersion == 'local') {
+							self::addStyleSheet('JQEASY_JQUICSS', $this->_versioning);
+						} else {
+							self::addStyleSheet('JQEASY_JQUICSS');
+						}
 					}
 				}
 			} // END jQuery UI
@@ -721,7 +748,7 @@ class plgSystemJqueryeasy extends JPlugin
 				
 				// remove potential jquery-noconflict.js (different combinations)
 				
-				$regexp = 'src="([\\\/a-zA-Z0-9_:\.~-]*)jquery[.-]*no[.-]*[cC]onflict\.js(.*?)"';
+				$regexp = 'src="([\\\/a-zA-Z0-9_:\.~-]*)jquery[.-]*no[.-]*[cC]onflict([0-9\.-]|min)*?.js(.*?)"';
 				
 				$count = 0;
 				$body = preg_replace('#'.$regexp.'#', 'GARBAGE', $body, -1, $count);				
@@ -1107,45 +1134,93 @@ class plgSystemJqueryeasy extends JPlugin
 			
 		// show the report
 		
-		if ($this->_showreport) {
-			
-			$pattern = '#</body>#';
-			$replacement = '<div id="jqueryeasy_report" style="z-index:10000; position: absolute; top: 0; left: 0;">'.chr(13);
-			
-			$replacement .= '<style type="text/css">#jqueryeasy_report code { white-space: normal; word-break: break-all; }</style>'.chr(13);	
-			
-			$replacement .= '<dl style="padding: 15px; margin: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; -moz-box-shadow: 0px 0px 8px #000; -webkit-box-shadow: 0px 0px 8px #000; box-shadow: 0px 0px 8px #000; background: #fff; background: rgba(255, 255, 255, .9);">'.chr(13);
-			$replacement .= '<button type="button" class="close" data-dismiss="alert" data-target="#jqueryeasy_report">&times;</button>'.chr(13);
-				
-			$replacement .= '<dt style="padding: 5px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; margin-bottom: 10px; text-align: center;">'.chr(13);
-			$replacement .= ' - '.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_JQUERYEASY').' - '.chr(13);
-			$replacement .= '</dt>'.chr(13);
-			
-			if (!empty($this->_verbose_array)) {
-				foreach ($this->_verbose_array as $verbose) {
-					
-					switch (substr($verbose, 0, 3)) {
-						case 'INF': $color = '#3A87AD'; $label = '<span class="label label-info" style="width: 15px; margin: 1px 0;">&nbsp;</span>&nbsp;'; break;
-						case 'DEL': $color = '#E38808'; $label = '<span class="label label-warning" style="width: 15px; margin: 1px 0;">&nbsp;</span>&nbsp;'; break;
-						case 'ERR': $color = '#B94A48'; $label = '<span class="label label-important" style="width: 15px; margin: 1px 0;">&nbsp;</span>&nbsp;'; break;
-						case 'ADD': $color = '#468847'; $label = '<span class="label label-success" style="width: 15px; margin: 1px 0;">&nbsp;</span>&nbsp;'; break;
-						default: $color = '#48484C'; $label = '<span class="label" style="width: 15px; margin: 1px 0;">&nbsp;</span>&nbsp;'; break;
-					}
-								
-					$replacement .= '<dd style="color: '.$color.';">'.$label.substr($verbose, 4).'</dd>'.chr(13);
-				}
-			} else {
-				$replacement .= '<dd>'.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_NOCHANGESMADE').'</dd>'.chr(13);
-			}
-			
-			$replacement .= '<dd style="padding-top: 10px">'.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_EXECUTIONTIME').': '.($this->_timeafterroute + $this->_timebeforerender + $this->_timeafterrender).'</dd>'.chr(13);
-						
-			$body = preg_replace($pattern, $replacement.'</dl>'.chr(13).'</div>'.chr(13).'</body>', $body, 1);
+		if ($this->_showreport) {			
+			$body = self::addReport($body, $this->_verbose_array, $this->_timeafterroute + $this->_timebeforerender + $this->_timeafterrender);
 		}
 				
 		JResponse::setBody($body);
 		
 		return true;
+	}
+	
+	static protected function addReport($body, $comments = array(), $execution_time = 0)
+	{
+		$replacement = array();
+		
+		$replacement[] = '<style type="text/css">#jqueryeasy_report code { white-space: normal; word-break: break-all; }</style>'.chr(13);
+		
+		$replacement[] = '<div id="jqueryeasy_report" style="z-index: 10000; display: block; overflow: hidden; position: fixed; top: 10px; left: 0; right: 0; width: 90%; max-width: 976px; margin: 0 auto; padding: 8px; box-sizing: border-box;">';
+		
+		$replacement[] = '<div style="position: relative; overflow: hidden; max-width: 960px; margin: 0 auto; border-radius: 4px; box-shadow: 0px 0px 8px #000; background: #fff; background: rgba(255, 255, 255, .9);">';
+		
+		// header
+		
+		$replacement[] = '<div style="position: relative; display: table; width: 100%; background-color: #d1ecf1; border-bottom: 1px dashed #0c5460;">';
+		
+		$replacement[] = '<span style="display: table-cell; padding: 5px 10px; color: #0c5460; font-weight: bold; font-size: 12px;">'.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_JQUERYEASY').'</span>';
+		
+		$replacement[] = '<a href="" onclick="document.getElementById(\'jqueryeasy_report\').style.display = \'none\'; return false;" style="display: table-cell; text-align: right; font-size: 12px; padding: 5px 10px;">'.\JText::_('JCANCEL').'</a>';
+		
+		$replacement[] = '</div>';
+		
+		// end header
+		
+		$replacement[] = '<dl style="padding: 0; margin: 15px; overflow: auto; max-height: 200px; max-height: 50vh">';
+		
+		$replacement[] = '<dt style="position: absolute; top: -9999px; left: -9999px;">'.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_JQUERYEASY').'</dt>';
+		
+		if (!empty($comments)) {
+			foreach ($comments as $comment) {
+				
+				switch (substr($comment, 0, 3)) {
+					case 'INF': $color = '#0c5460'; $bgcolor = '#d1ecf1'; $label = '<span class="label" style="display: inline-block; background-color: '.$bgcolor.'; width: 15px; margin: 1px 5px 1px 0;">&nbsp;</span>'; break;
+					case 'DEL': $color = '#856404'; $bgcolor = '#fff3cd'; $label = '<span class="label" style="display: inline-block; background-color: '.$bgcolor.'; width: 15px; margin: 1px 5px 1px 0;">&nbsp;</span>'; break;
+					case 'ERR': $color = '#721c24'; $bgcolor = '#f8d7da'; $label = '<span class="label" style="display: inline-block; background-color: '.$bgcolor.'; width: 15px; margin: 1px 5px 1px 0;">&nbsp;</span>'; break;
+					case 'ADD': $color = '#155724'; $bgcolor = '#d4edda'; $label = '<span class="label" style="display: inline-block; background-color: '.$bgcolor.'; width: 15px; margin: 1px 5px 1px 0;">&nbsp;</span>'; break;
+					default: $color = '#1b1e21'; $bgcolor = '#d6d8d9'; $label = '<span class="label" style="display: inline-block; background-color: '.$bgcolor.'; width: 15px; margin: 1px 5px 1px 0;">&nbsp;</span>'; break;
+				}
+				
+				$replacement[] = '<dd style="color: '.$color.'; margin-bottom: 6px;">'.$label.substr($comment, 4).'</dd>';
+			}
+		} else {
+			$replacement[] = '<dd>'.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_NOCHANGESMADE').'</dd>';
+		}
+		
+		$replacement[] = '</dl>';
+		
+		// footer
+		
+		$replacement[] = '<div style="position: relative; display: table; width: 100%; background-color: #d1ecf1; border-top: 1px dashed #0c5460;">';
+		
+		$replacement[] = '<span style="display: table-cell; padding: 5px 10px; color: #0c5460; font-size: 12px;">'.JText::_('PLG_SYSTEM_JQUERYEASY_VERBOSE_EXECUTIONTIME').': '.number_format($execution_time, 4).'</span>';
+		
+		$replacement[] = '</div>';
+		
+		// end footer
+		
+		$replacement[] = '</div>';
+		
+		$replacement[] = '</div>';
+		
+		return preg_replace('#</body>#', implode('', $replacement).chr(13).'</body>', $body, 1);
+	}
+	
+	static protected function addScript($url, $useversion = false, $type = 'text/javascript', $defer = false, $async = false) 
+	{		
+		if (/*version_compare(JVERSION, '3.2.0', 'ge') && */$useversion) {
+			JFactory::getDocument()->addScriptVersion($url, null, $type, $defer, $async);
+		} else {
+			JFactory::getDocument()->addScript($url, $type, $defer, $async);
+		}
+	}
+	
+	static protected function addStyleSheet($url, $useversion = false, $type = 'text/css', $media = null, $attribs = array()) 
+	{		
+		if (/*version_compare(JVERSION, '3.2.0', 'ge') && */$useversion) {
+			JFactory::getDocument()->addStyleSheetVersion($url, null, $type, $media, $attribs);
+		} else {
+			JFactory::getDocument()->addStyleSheet($url, $type, $media, $attribs);
+		}
 	}	
 	
 	static protected function path_compare($uri, $path, $use_backward_compatibility)
