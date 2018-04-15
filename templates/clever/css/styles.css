@@ -359,6 +359,8 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #logo a{ text-align:center}
 #site-description { text-align:center}
 #top { float:none}
+.topmost-alignleft  { text-align: left; float: left;}
+.topmost-alignright {text-align: right; float: right;}
 #menu-icon {width:100%;height: 55px; line-height:55px;text-decoration:none;background:#fff; padding:0; cursor: pointer;display: block;  -webkit-border-radius: 8px; -moz-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; }
 #menu-icon:hover,#menu-icon.active  {background-color: #ffffff;}
 .menu-icon-title { font-size:20px; padding:0 0 0 10px;}
@@ -409,7 +411,9 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 #second-msg	{ color: #ffffff; }
 #slide-wrap: { width: 100%}
 .full { width:100%; height: 500px}
-.searchbox  {float: right;}
+.searchbox  {float: left; }
+.cartbox  {float: right; }
+}
 @media screen and (max-width: 925px) { #search-mobile  {text-align: center !important; margin: 0 auto !important;} }
 @media screen and (max-width: 925px)  {
   #mobile-only-cart {text-align: center !important; background-color: #ffffff; margin: 0 auto !important; width: 100%; visibility: visible; display: block; }
@@ -420,6 +424,7 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .customslogan2 { color: #000; font-weight: 100; line-height: 100%; font-size: 24px; margin: 0; padding: 0; letter-spacing: .4em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
 .customfeatured { text-align: center; margin: 0 auto !important; color: #000; font-size: 16px; font-weight: 100; letter-spacing: 1.8px; line-height: 130%; vertical-align: baseline; }
 .customheader { display: block; min-width: 220px; margin-left: auto; margin-right: auto;  }
+.mobile-header  { position: absolute; padding: 5px;}
 /***
 .customcontentslide12 { color: #fff; font-weight: 100; line-height: 100%; font-size:18px; margin: 0; padding: 0; letter-spacing: .1em; text-align: center; text-transform: uppercase; font-weight: bold;}
 .customcontentslide22 { color: #fff; font-weight: 100; line-height: 100%; font-size:24px; margin: 0; padding: 0; letter-spacing: .3em; text-align: center !important; text-transform: uppercase; font-weight: bold;} ***/
@@ -427,12 +432,14 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 .customcontentslide2 { color: #fff; font-weight: 100; line-height: 100%; font-size: 24px; margin: 20px; padding: 0; letter-spacing: .3em; text-align: center !important; text-transform: uppercase; font-weight: bold;}
 .contentslide-wrapper { background-image: url("../../../images/full-image-section/style-doesnt-have-to-hurt-bg-large.jpg"); background-repeat: no-repeat; background-size: 100% 100%; }
 @media screen and (max-width: 768px) { #mobile-responsive  {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;} }
-.default-mobile   {visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none;}
+.default-mobile   {visibility: hidden; display: none;}
+
 
 @media screen and (max-width: 768px)  {
   #mobile-only {display: block !important; visibility: visible !important; width: 100%; margin: 0 auto; text-align: center; background-color: #ffffff}
   .desktop-only { visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 28%; display: none; }
   }
+
 @media screen and (max-width: 1024px) { #lookbook-mobile  {text-align: center !important; margin: 0 auto;} }
 .slide-mobile { display: none; visibility: hidden;}
 #contenttext-wrapper {  position: relative; padding: 20px; margin: 0 auto; top: 20px; text-align: center !important; display: block;}
@@ -490,6 +497,13 @@ a.thumbnail:hover {border-color: #08c;-webkit-box-shadow: 0 1px 4px rgba(0,105,2
 /**** custom hika css ***/
 .relatedmod{  padding-top: 20px; }
 #hikashop_category_information_module_159 .hikashop_products_pagination{  display: none;  }
+/*** @media only screen and (max-width: 760px), (max-device-width: 1024px) and (min-device-width: 768px) {
+.hikashop_checkout_cart table td {
+    padding-left: 40% !important;
+}
+} ***/
+
+
 /*** custom hika css end ***/
 
 /***custom css ends here ***/

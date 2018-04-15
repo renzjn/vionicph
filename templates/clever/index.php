@@ -41,17 +41,22 @@ $menu = $app->getMenu();
 <div id="wrapper">
 <div id="mobile-only-cart" class="topmost">
 	<div class="container row">
-			<div id="mobile-responsive-top" class="span_7 col clrs"><jdoc:include type="modules" name="topmost-left"  /></div>
+			<div id="mobile-responsive" class="span_15 col clrs searchbox"><div class="searchbox"><jdoc:include type="modules" name="topmost-left"  /></div></div>
 			<?php if ($this->countModules('topmost-right')) : ?>
-			<div id="lookbook-mobile" class="span_5 col clrs"><div id="search-mobile" class="searchbox"><jdoc:include type="modules" name="topmost-right"  /></div></div>
+			<div id="mobile-responsive" class="span_7 col clrs cartbox"><div class="cartbox"><jdoc:include type="modules" name="topmost-right"  /></div></div>
 		<?php endif; ?>
+		<div id="mobile-only" class="default-mobile searchbox" style="width: 50%;"><div class="searchbox"><jdoc:include type="modules" name="topmost-left"  /></div></div>
+		<?php if ($this->countModules('topmost-right')) : ?>
+		<div id="mobile-only" class="default-mobile cartbox" style="width: 50%;"><div class="cartbox"><jdoc:include type="modules" name="topmost-right"  /></div></div>
+	<?php endif; ?>
+
 	</div>
 </div>
 <div id="topbar">
 <div id="header-wrap" class="clrs">
     	<div id="header" class="container row clrs">
             <div id="logo" class="customheader">
-				<?php if ($logotype == 'image' ) : ?>
+				<?php if ($logotype  == 'image' ) : ?>
                 <?php if ($logo != null ) : ?>
             <a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>" alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" /></a>
                 <?php else : ?>
